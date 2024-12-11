@@ -1,0 +1,29 @@
+<view class="container">
+  <view class="form-container">
+    <view class="title">手机号密码登录</view>
+    <t-input
+      label="手机号"
+      placeholder="请输入手机号"
+      type="number"
+      maxlength="11"
+      bindchange="onPhoneInput"
+      value="{{phone}}"
+    />
+    <t-input
+      label="密码"
+      placeholder="请输入密码"
+      password
+      bindchange="onPasswordInput"
+      value="{{password}}"
+    />
+    <t-button
+      block
+      theme="primary"
+      bindtap="onLogin"
+      class="login-button"
+    >
+      登录
+    </t-button>
+  </view>
+  <t-toast id="toast" />
+</view>

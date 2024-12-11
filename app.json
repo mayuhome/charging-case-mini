@@ -1,10 +1,13 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/login/login",
+
     "pages/logs/logs"
   ],
   "tabBar": {
     "custom": true,
+    "position": "bottom",
     "color": "#666666",
     "selectedColor": "#FF5F15",
     "backgroundColor": "#ffffff",
@@ -26,9 +29,11 @@
     "navigationBarTitleText": "Weixin",
     "navigationBarTextStyle": "black"
   },
-  "style": "v2",
-  "usingComponents": {},
-  "componentFramework": "glass-easel",
+  "usingComponents": {
+    "t-input": "tdesign-miniprogram/input/input",
+    "t-button": "tdesign-miniprogram/button/button",
+    "t-toast": "tdesign-miniprogram/toast/toast"
+  },
   "sitemapLocation": "sitemap.json",
   "lazyCodeLoading": "requiredComponents"
 }
