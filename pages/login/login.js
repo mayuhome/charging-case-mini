@@ -52,7 +52,7 @@ Page({
           this.showToast('登录成功2', 'success');
           console.log('tiaozhuan');
           wx.switchTab({
-            url: '/pages/logs/logs', // 跳转到首页
+            url: '/pages/usercenter/index', // 跳转到首页
           });
           console.log('tianzhuang 2');
         } else {

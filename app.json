@@ -1,8 +1,10 @@
 {
   "pages": [
-    "pages/usercenter/components/user-center-card/index",
-    "pages/home/home",
     "pages/usercenter/index",
+    "pages/usercenter/components/user-center-card/index",
+    "pages/login/login",
+    "pages/home/home",
+
     "pages/report/report",
     
     "pages/usercenter/components/order-group/index"
