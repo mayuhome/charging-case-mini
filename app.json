@@ -1,27 +1,41 @@
 {
   "pages": [
-    "pages/index/index",
-    "pages/login/login",
-
-    "pages/logs/logs"
+    "pages/usercenter/components/user-center-card/index",
+    "pages/home/home",
+    "pages/usercenter/index",
+    "pages/report/report",
+    
+    "pages/usercenter/components/order-group/index"
   ],
   "tabBar": {
     "custom": true,
-    "position": "bottom",
     "color": "#666666",
     "selectedColor": "#FF5F15",
     "backgroundColor": "#ffffff",
     "borderStyle": "black",
     "list": [
       {
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/home/home",
         "text": "首页"
       },
       {
-        "pagePath": "pages/logs/logs",
-        "text": "分类"
+        "pagePath": "pages/report/report",
+        "text": "报表"
+      },
+      {
+        "pagePath": "pages/usercenter/index",
+        "text": "我的"
       }
     ]
+  },
+  "requiredPrivateInfos": [
+    "chooseAddress"
+  ],
+  "lazyCodeLoading": "requiredComponents",
+  "usingComponents": {
+    "t-input": "tdesign-miniprogram/input/input",
+    "t-button": "tdesign-miniprogram/button/button",
+    "t-toast": "tdesign-miniprogram/toast/toast"
   },
   "window": {
     "backgroundTextStyle": "light",
@@ -29,11 +43,10 @@
     "navigationBarTitleText": "Weixin",
     "navigationBarTextStyle": "black"
   },
-  "usingComponents": {
-    "t-input": "tdesign-miniprogram/input/input",
-    "t-button": "tdesign-miniprogram/button/button",
-    "t-toast": "tdesign-miniprogram/toast/toast"
-  },
   "sitemapLocation": "sitemap.json",
-  "lazyCodeLoading": "requiredComponents"
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  }
 }
