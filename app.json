@@ -4,10 +4,10 @@
     "pages/usercenter/components/user-center-card/index",
     "pages/login/login",
     "pages/home/home",
-
     "pages/report/report",
-    
-    "pages/usercenter/components/order-group/index"
+    "pages/usercenter/components/order-group/index",
+    "pages/usercenter/shops/index",
+    "pages/usercenter/shops/create/index"
   ],
   "tabBar": {
     "custom": true,
@@ -35,6 +35,8 @@
   ],
   "lazyCodeLoading": "requiredComponents",
   "usingComponents": {
+    "t-popup": "tdesign-miniprogram/popup/popup",
+    "t-icon": "tdesign-miniprogram/icon/icon",
     "t-input": "tdesign-miniprogram/input/input",
     "t-button": "tdesign-miniprogram/button/button",
     "t-toast": "tdesign-miniprogram/toast/toast"

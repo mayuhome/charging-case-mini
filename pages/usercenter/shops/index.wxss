@@ -1,0 +1,65 @@
+.container {
+  padding: 16px;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.search-input {
+  flex: 1;
+  height: 32px;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.create-user-btn {
+  padding: 8px 16px;
+  background-color: #007aff;
+  color: white;
+  border-radius: 4px;
+}
+
+.user-list {
+  margin-top: 20px;
+}
+
+.user-item {
+  margin-bottom: 16px; /* 为了让卡片之间有间距 */
+}
+
+.card-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.phone,
+.username,
+.device-id {
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #333;
+}
+
+.edit-btn-container {
+  display: flex;
+  justify-content: center;
+}
+
+.edit-btn {
+  background: none;
+  border: none;
+  color: #007aff;
+}

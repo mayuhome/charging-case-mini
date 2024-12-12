@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "新增商户",
+  "usingComponents": {
+    "t-input": "tdesign-miniprogram/input/input",
+    "van-field": "@vant/weapp/field/index",
+    "van-switch": "@vant/weapp/switch/index",
+    "van-cell": "@vant/weapp/cell/index"
+  }
+}

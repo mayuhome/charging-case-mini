@@ -4,6 +4,12 @@ import Toast from 'tdesign-miniprogram/toast/index';
 const menuData = [
   [
     {
+      title: '我的商户',
+      tit: '',
+      url: '',
+      type: 'shops',
+    },
+    {
       title: '地址',
       tit: '',
       url: '',
@@ -149,9 +155,16 @@ Page({
   },
 
   onClickCell({ currentTarget }) {
+    console.log('currentTarget:', currentTarget);
     const { type } = currentTarget.dataset;
 
     switch (type) {
+      case 'shops': {
+        wx.navigateTo({
+          url: '/pages/usercenter/shops/index',
+        });
+        break;
+      }
       case 'address': {
         wx.navigateTo({ url: '/pages/usercenter/address/list/index' });
         break;
