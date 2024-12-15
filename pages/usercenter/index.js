@@ -1,5 +1,8 @@
 import { fetchUserCenter } from '../../services/fetchUsercenter';
 import Toast from 'tdesign-miniprogram/toast/index';
+import { createStoreBindings } from 'mobx-miniprogram-bindings';
+import { userStore } from '../../stores/user-store';
+
 
 const menuData = [
   [
@@ -103,8 +106,14 @@ Page({
 
   onLoad() {
     this.getVersionInfo();
+    this.storeBindings = createStoreBindings(this, {
+      store: userStore,
+      fields: ['userInfo', 'isAuthenticated'],
+    });
   },
-
+  onUnload() {
+    this.storeBindings.destroyStoreBindings();
+  },
   onShow() {
     this.getTabBar().init();
     this.init();
@@ -117,6 +126,10 @@ Page({
     console.log('init');
     this.fetUseriInfoHandle();
   },
+
+  
+
+
 
   fetUseriInfoHandle() {
     fetchUserCenter().then(

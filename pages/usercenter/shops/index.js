@@ -1,3 +1,5 @@
+import { GET } from '../../../utils/request';
+
 Page({
   data: {
     userList: [
@@ -5,6 +7,10 @@ Page({
       { id: 2, phone: '13900139000', username: '李四', deviceId: 'B654321' },
       // 其他用户数据...
     ]
+  },
+
+  onShow(){
+    this.getUsers();
   },
 
   // 查询框输入事件
@@ -28,5 +34,13 @@ Page({
     wx.navigateTo({
       url: `/pages/edit-user/edit-user?id=${userId}`, // 假设有一个编辑用户页面
     });
-  }
+  },
+  getUsers(){
+    GET('/user').then(res => {
+      console.log('user:',res);
+      this.setData({
+        userList: [...res]
+      })
+    })
+  },
 });

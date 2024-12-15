@@ -1,9 +1,24 @@
+import { createStoreBindings } from "mobx-miniprogram-bindings";
+import { userStore } from "../../stores/user-store";
+import { POST } from "../../utils/request";
+import { setStorage } from "../../utils/storage";
+
 Page({
   data: {
     phone: '', // 用户手机号
     password: '', // 用户密码
   },
+onLoad(){
+  this.storeBidings = createStoreBindings(this, {
+    store: userStore,
+    fields: ['userInfo', 'isAuthenticated'],
+    actions: ['updateUserInfo', 'logout']
+  });
+},
 
+onUnload(){
+  this.storeBidings.destroyStoreBindings();
+},
   // 监听手机号输入
   onPhoneInput(event) {
     this.setData({
@@ -35,44 +50,50 @@ Page({
     
 
     // 发起请求到后端登录接口
-    wx.request({
-      url: 'http://166.108.193.190:3002/auth/login', // 后端登录接口
-      method: 'POST',
-      data: {
+    POST(
+      '/auth/login', // 后端登录接口
+       {
         phone,
         password,
-      },
-      header: {
-        'Content-Type': 'application/json',
-      },
-      success: (res) => {
-        if (res.data && res.data.code === 200) {
-          // 登录成功，保存 token
-          wx.setStorageSync('token', res.data.data.accessToken);
-          this.showToast('登录成功2', 'success');
-          console.log('tiaozhuan');
-          wx.switchTab({
-            url: '/pages/usercenter/index', // 跳转到首页
-          });
-          console.log('tianzhuang 2');
-        } else {
-          // 登录失败提示
-          this.showToast(res.data.message || '登录失败', 'fail');
-        }
-      },
-      fail: (err) => {
-        console.error('登录请求失败', err);
-        this.showToast('网络错误，请稍后再试', 'fail');
-      },
-    });
+      }).then(res => {
+        console.log('res:',res);
+        this.updateUserInfo(res.userInfo);
+        setStorage('token', res.accessToken);
+        console.log('userinfo:', this.userInfo);
+        // this.showToast('登录成功2', 'success');
+        wx.switchTab({
+          url: '/pages/usercenter/index', // 跳转到首页
+        });
+        console.log('tianzhuang 2');
+      })
+      // success: (res) => {
+      //   if (res.data && res.data.code === 200) {
+      //     // 登录成功，保存 token
+      //     wx.setStorageSync('token', res.data.data.accessToken);
+      //     this.showToast('登录成功2', 'success');
+      //     console.log('tiaozhuan');
+      //     wx.switchTab({
+      //       url: '/pages/usercenter/index', // 跳转到首页
+      //     });
+      //     console.log('tianzhuang 2');
+      //   } else {
+      //     // 登录失败提示
+      //     this.showToast(res.data.message || '登录失败', 'fail');
+      //   }
+      // },
+      // fail: (err) => {
+      //   console.error('登录请求失败', err);
+      //   this.showToast('网络错误，请稍后再试', 'fail');
+      // },
+    // });
   },
 
-  // 显示 Toast 提示
-  showToast(message, theme) {
-    const toast = this.selectComponent('#toast');
-    toast.show({
-      message,
-      theme,
-    });
-  },
+  // // 显示 Toast 提示
+  // showToast(message, theme) {
+  //   const toast = this.selectComponent('#toast');
+  //   toast.show({
+  //     message,
+  //     theme,
+  //   });
+  // },
 });
