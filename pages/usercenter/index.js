@@ -11,24 +11,28 @@ const menuData = [
       tit: '',
       url: '',
       type: 'shops',
+      hasArrow: true
     },
     {
       title: '地址',
-      tit: '',
+      tit: 'qweqweqw',
       url: '',
       type: 'address',
+      hasArrow: false
     },
     {
       title: '设备编号',
-      tit: '',
+      tit: 'qweqweqwe123123',
       url: '',
-      type: 'coupon',
+      type: 'code',
+      hasArrow: false
     },
     {
       title: '分成比例',
       tit: '',
       url: '',
       type: 'point',
+      hasArrow: false
     },
   ],
   [
@@ -37,6 +41,7 @@ const menuData = [
       tit: '',
       url: '',
       type: 'help-center',
+      hasArrow: true
     },
     {
       title: '客服热线',
@@ -44,6 +49,7 @@ const menuData = [
       url: '',
       type: 'service',
       icon: 'service',
+      hasArrow: false
     },
   ],
 ];
@@ -88,11 +94,11 @@ const orderTagInfos = [
 
 const getDefaultData = () => ({
   showMakePhone: false,
-  userInfo: {
-    avatarUrl: '',
-    nickName: '正在登录...',
-    phoneNumber: '',
-  },
+  // userInfo: {
+  //   avatarUrl: '',
+  //   nickName: '正在登录...',
+  //   phoneNumber: '',
+  // },
   menuData,
   orderTagInfos,
   customerServiceInfo: {},
@@ -124,7 +130,7 @@ Page({
 
   init() {
     console.log('init');
-    this.fetUseriInfoHandle();
+    // this.fetUseriInfoHandle();
   },
 
   
@@ -235,6 +241,22 @@ Page({
 
   jumpAllOrder() {
     wx.navigateTo({ url: '/pages/order/order-list/index' });
+  },
+
+  jumpToShops(){
+    wx.navigateTo({
+      url: '/pages/usercenter/shops/index',
+    })
+  },
+
+  helpCenter(){
+    Toast({
+      context: this,
+      selector: '#t-toast',
+      message: '帮助中心暂时不可用',
+      icon: '',
+      duration: 1000,
+    });
   },
 
   openMakePhone() {

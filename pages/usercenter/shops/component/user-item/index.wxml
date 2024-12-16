@@ -1,0 +1,22 @@
+<view class="card-container">
+  <text>{{phone}}</text>
+  <view class="card-edit-icon" bindtap="onEdit">
+    <van-icon name="edit" />
+  </view>
+  <view class="card-field">
+    <text>Phone:</text>
+    <text>{{userInfo.phone}}</text>
+  </view>
+  <view class="card-field">
+    <text>Name:</text>
+    <text>{{userInfo.name}}</text>
+  </view>
+  <view class="card-field">
+    <text>Password:</text>
+    <text>{{userInfo.password}}</text>
+  </view>
+  <view class="card-field">
+    <text>Code:</text>
+    <text>{{userInfo.code}}</text>
+  </view>
+</view>

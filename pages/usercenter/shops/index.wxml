@@ -4,11 +4,47 @@
     <!-- <input class="search-input" placeholder="请输入手机号或用户名" bindinput="onSearch" />
     <button class="create-user-btn" bindtap="onCreateUser">新建用户</button> -->
     <van-search value="{{ value }}" placeholder="请输入手机号或用户名" bindinput="onSearch"/>
+    <t-fab icon="add" bind:click="handleClick" aria-label="增加"></t-fab>
   </view>
 
   <!-- 用户列表 -->
   <view class="user-list">
     <block wx:for="{{userList}}" wx:key="index">
+    <user-item userInfo="{{item}}" phone="{{item.phone}}"></user-item>
+    <view class="card-container">
+  <view class="card-edit-icon" bindtap="onEdit">
+    <van-icon name="edit" />
+  </view>
+  <view class="card-field">
+    <text>Phone:</text>
+    <text>{{item.phone}}</text>
+  </view>
+  <view class="card-field">
+    <text>Name:</text>
+    <text>{{item.name}}</text>
+  </view>
+  <view class="card-field">
+    <text>Password:</text>
+    <text>{{item.password}}</text>
+  </view>
+  <view class="card-field">
+    <text>Code:</text>
+    <text>{{item.code}}</text>
+  </view>
+</view>
+    <!-- <view class="card">
+      <view class="card-header">
+        <text class="card-title">Item {{index + 1}}</text>
+        <button class="edit-button" bindtap="handleEdit" data-index="{{index}}">Edit</button>
+      </view>
+      <view class="card-content">
+        <text class="card-field">Phone: {{item.phone}}</text>
+        <text class="card-field">Code: {{item.code}}</text>
+        <text class="card-field">Name: {{item.name}}</text>
+      </view>
+    </view> -->
+  </block>
+    <!-- <block wx:for="{{userList}}" wx:key="index">
       <t-card class="user-item">
         <view class="card-content">
           <view class="user-info">
@@ -23,7 +59,7 @@
           </view>
         </view>
       </t-card>
-    </block>
+    </block> -->
   </view>
   <view class="footer">
     <t-button theme="primary" size="small" block bindtap="onCreateUser">新建商户</t-button>
