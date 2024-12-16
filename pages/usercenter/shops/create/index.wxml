@@ -20,14 +20,14 @@
     required
   />
   <van-field
-    value="{{ deviceIds }}"
+    value="{{ code }}"
     label="设备编号"
     required
     placeholder="请输入设备编号"
   />
       <!-- 姓名 -->
       <van-field
-    value="{{ username }}"
+    value="{{ name }}"
     label="用户名"
     placeholder="请输入用户名"
   />

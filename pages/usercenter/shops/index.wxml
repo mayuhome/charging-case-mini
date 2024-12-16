@@ -4,7 +4,7 @@
     <!-- <input class="search-input" placeholder="请输入手机号或用户名" bindinput="onSearch" />
     <button class="create-user-btn" bindtap="onCreateUser">新建用户</button> -->
     <van-search value="{{ value }}" placeholder="请输入手机号或用户名" bindinput="onSearch"/>
-    <t-fab icon="add" bind:click="handleClick" aria-label="增加"></t-fab>
+    <t-fab icon="add" bind:click="onCreateUser" aria-label="增加"></t-fab>
   </view>
 
   <!-- 用户列表 -->
