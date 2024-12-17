@@ -14,13 +14,17 @@
 
   <van-field
     value="{{ password }}"
+    bind:input="onInput"
     type="password"
     label="密码"
     placeholder="请输入密码"
+    data-field="password"
     required
   />
   <van-field
     value="{{ code }}"
+    data-field="code"
+    bind:input="onInput"
     label="设备编号"
     required
     placeholder="请输入设备编号"
@@ -28,20 +32,26 @@
       <!-- 姓名 -->
       <van-field
     value="{{ name }}"
+    data-field="name"
+    bind:input="onInput"
     label="用户名"
     placeholder="请输入用户名"
   />
   <van-field
     value="{{ address }}"
+    data-field="address"
+    bind:input="onInput"
     label="地址"
     placeholder="请输入地址"
   />
   <van-field
     value="{{ profitShare }}"
+    bind:input="onInput"
+    data-field="profitShare"
     label="分成比例"
     placeholder="请输入分成比例"
   />
-  <van-cell class="active-cell" title="激活"><van-switch checked size="20px" active-color="#07c160"/></van-cell>
+  <van-cell class="active-cell" title="激活"><van-switch bind:input="onInput" checked value="{{isActive}}" data-field="isActive" size="20px" active-color="#07c160"/></van-cell>
 </van-cell-group>
 
 

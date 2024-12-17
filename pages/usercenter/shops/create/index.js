@@ -7,7 +7,7 @@ Page({
     password: '',
     address: '',
     profitShare: '',
-    isEnabled: true,
+    isActive: true,
     code: '', // 初始一个空设备编号输入框
   },
 
@@ -44,7 +44,7 @@ Page({
 
   // 提交表单
   onSubmit() {
-    const { phone, code, name,password, address, profitShare, isEnabled } = this.data;
+    const { phone, code, name,password, address, profitShare, isActive } = this.data;
     console.log('data:', this.data);
 
     // 验证必填项
@@ -52,7 +52,7 @@ Page({
       wx.showToast({ title: '手机号不能为空', icon: 'none' });
       return;
     }
-    if (code.trim()) {
+    if (!code.trim()) {
       wx.showToast({ title: '设备编号不能为空', icon: 'none' });
       return;
     }
@@ -64,14 +64,15 @@ Page({
       name,
       password,
       address,
-      profitShare: profitShare ? parseFloat(profitShare) : null,
-      isEnabled,
+      profitShare,
+      isActive,
     };
 
     console.log('提交表单数据：', formData);
     POST('/user', formData).then(res => {
       console.log('res:', res);
       wx.showToast({ title: '提交成功', icon: 'success' });
+      // wx.navigateBack();
     })
 
   },

@@ -2,6 +2,7 @@ import { GET } from '../../../utils/request';
 
 Page({
   data: {
+    keyword: '',
     userList: [
       { id: 1, phone: '13800138000', username: '张三', deviceId: 'A123456' },
       { id: 2, phone: '13900139000', username: '李四', deviceId: 'B654321' },
@@ -17,7 +18,7 @@ Page({
   onSearch(e) {
     const query = e.detail.value;
     console.log('查询内容:', query);
-    // 在这里进行过滤或请求数据
+    this.userList.filter(f => f.name.include(query) || f.code.include(query));
   },
 
   // 新建用户按钮点击事件
