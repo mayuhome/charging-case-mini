@@ -11,7 +11,7 @@
   <view class="user-list">
     <block wx:for="{{userList}}" wx:key="index">
     <user-item userInfo="{{item}}" phone="{{item.phone}}"></user-item>
-    <view class="card-container">
+    <!-- <view class="card-container">
   <view class="card-edit-icon" bindtap="onEdit">
     <van-icon name="edit" />
   </view>
@@ -30,8 +30,8 @@
   <view class="card-field">
     <text>Code:</text>
     <text>{{item.code}}</text>
-  </view>
-</view>
+  </view> 
+</view> -->
     <!-- <view class="card">
       <view class="card-header">
         <text class="card-title">Item {{index + 1}}</text>

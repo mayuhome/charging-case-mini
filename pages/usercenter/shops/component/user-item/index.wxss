@@ -1,9 +1,15 @@
 .card-container {
-  padding: 16px;
+  /* padding: 16px; */
+  
   margin: 12px;
   border-radius: 12px;
-  background: linear-gradient(135deg, #FFD194, #D1913C);
+  background: linear-gradient(135deg, #2BC0E467,#EAECC667);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+.title{
+  padding-left: 12px;
+  font-size: large;
+  color: #1196ff;
 }
 .card-field {
   display: flex;
@@ -19,4 +25,22 @@
   font-size: 20px;
   color: #555;
   cursor: pointer;
+}
+.btns{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  /* background-color: aliceblue; */
+  align-items: center;
+}
+.sub-button{
+  flex: 1;
+  font-size: 14px;
+  font-weight: 400;
+  height: 40px;
+  background-color: #fff;
+  color: #1485ee;
+  border: 1px solid #1485ee55;
+  margin: 0;
+  text-align: center;
 }

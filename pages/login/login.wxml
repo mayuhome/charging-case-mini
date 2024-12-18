@@ -1,4 +1,4 @@
-<view class="container">
+<!-- <view class="container">
   <view class="form-container">
     <view class="title">手机号密码登录</view>
     <t-input
@@ -24,6 +24,26 @@
     >
       登录
     </t-button>
+  </view>
+  <t-toast id="toast" />
+</view> -->
+
+<view class="main" style="background-size: cover; background-image: url(../../assets/IMG@1x.png);">
+  <!-- <view> -->
+    <text class="title">后台管理系统</text>
+  <!-- </view> -->
+  <view class="content">
+  <view class="field">
+    <label for="phone">手机号</label>
+    <input type="number" maxlength="11" bindinput="onPhoneInput" placeholder="请输入手机号" value="{{phone}}"/>
+  </view>
+  <view class="field">
+    <label for="phone">密码</label>
+    <input type="text" password placeholder="请输入密码" bindinput="onPasswordInput" value="{{password}}"/>
+  </view>
+    <button class="btn" bind:tap="onLogin">
+    登录
+    </button>
   </view>
   <t-toast id="toast" />
 </view>

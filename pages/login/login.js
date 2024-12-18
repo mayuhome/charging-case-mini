@@ -88,12 +88,12 @@ onUnload(){
     // });
   },
 
-  // // 显示 Toast 提示
-  // showToast(message, theme) {
-  //   const toast = this.selectComponent('#toast');
-  //   toast.show({
-  //     message,
-  //     theme,
-  //   });
-  // },
+  // 显示 Toast 提示
+  showToast(message, theme) {
+    const toast = this.selectComponent('#toast');
+    toast.show({
+      message,
+      theme,
+    });
+  },
 });

@@ -1,5 +1,9 @@
 <view class="card-container">
-  <text>{{phone}}</text>
+  <!-- <view> -->
+    <text class="title">{{userInfo.code || '未绑定'}}</text>
+  <!-- </view> -->
+  <view class="content">
+    <text>{{phone}}</text>
   <view class="card-edit-icon" bindtap="onEdit">
     <van-icon name="edit" />
   </view>
@@ -18,5 +22,11 @@
   <view class="card-field">
     <text>Code:</text>
     <text>{{userInfo.code}}</text>
+  </view>
+  </view>
+  <view class="btns">
+    <button class="sub-button">设备解绑</button>
+    <button class="sub-button">更换密码</button>
+    <button class="sub-button">修改</button>
   </view>
 </view>
