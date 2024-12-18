@@ -1,32 +1,32 @@
 <view class="card-container">
-  <!-- <view> -->
-    <text class="title">{{userInfo.code || '未绑定'}}</text>
-  <!-- </view> -->
-  <view class="content">
-    <text>{{phone}}</text>
-  <view class="card-edit-icon" bindtap="onEdit">
-    <van-icon name="edit" />
+  <view class="title field">
+  <label for="">设备编号</label>
+  <text>{{userInfo.code || '未绑定'}}</text>
   </view>
-  <view class="card-field">
-    <text>Phone:</text>
+  <view class="field desc">
+    <text>手机号码</text>
     <text>{{userInfo.phone}}</text>
   </view>
-  <view class="card-field">
-    <text>Name:</text>
+  <view class="field desc">
+    <text>名称</text>
     <text>{{userInfo.name}}</text>
   </view>
-  <view class="card-field">
-    <text>Password:</text>
-    <text>{{userInfo.password}}</text>
+  <view class="field desc">
+    <text>地址</text>
+    <text>{{userInfo.address}}</text>
   </view>
-  <view class="card-field">
-    <text>Code:</text>
-    <text>{{userInfo.code}}</text>
+  <view class="field desc">
+    <text>分成比例</text>
+    <text>{{userInfo.profitShare}}</text>
   </view>
+  <view class="field desc">
+    <text>是否激活</text>
+    <text wx:if="{{userInfo.isActive}}" style="color: #22C55E;">已激活</text>
+    <text wx:if="{{!userInfo.isActive}}" style="color: #EF4444;">未激活</text>
   </view>
   <view class="btns">
-    <button class="sub-button">设备解绑</button>
-    <button class="sub-button">更换密码</button>
-    <button class="sub-button">修改</button>
+    <button class="sub-button" style="background: #f87171;">设备解绑</button>
+    <button class="sub-button" style="background: #fbbf24;">更换密码</button>
+    <button class="sub-button" style="background: #14b8a6;">修改</button>
   </view>
 </view>
