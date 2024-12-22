@@ -7,10 +7,17 @@ import { userStore } from '../../stores/user-store';
 const menuData = [
   [
     {
+      title: '我的设备',
+      tit: 'shebei',
+      url: '',
+      type: 'shops',
+      hasArrow: true
+    },
+    {
       title: '我的商户',
       tit: '',
       url: '',
-      type: 'shops',
+      type: 'clients',
       hasArrow: true
     },
     {
@@ -183,6 +190,11 @@ Page({
           url: '/pages/usercenter/shops/index',
         });
         break;
+      }
+      case 'clients': {
+        wx.navigateTo({
+          url: '/pages/usercenter/clients/index',
+        })
       }
       case 'address': {
         wx.navigateTo({ url: '/pages/usercenter/address/list/index' });
