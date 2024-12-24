@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "设备列表",
+  "usingComponents": {
+    "t-fab": "tdesign-miniprogram/fab/fab",
+    "box-card":"../components/box-card/box-card"
+  }
+}

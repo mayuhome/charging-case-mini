@@ -10,7 +10,9 @@
     "pages/usercenter/shops/create/index",
     "pages/usercenter/clients/index",
     "pages/usercenter/users/index",
-    "pages/usercenter/users/create/index"
+    "pages/usercenter/users/create/index",
+    "pages/usercenter/boxes/index",
+    "pages/usercenter/boxes/create/index"
   ],
   "tabBar": {
     "custom": true,

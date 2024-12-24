@@ -10,7 +10,11 @@ export const UserAPI = {
 };
 
 // 其他模块接口可以继续添加，例如设备管理
-export const DeviceAPI = {
-  getDeviceList: (params) => GET('/devices', params),
-  bindDevice: (data) => POST('/devices/bind', data),
+export const BoxAPI = {
+  getBoxList: (params) => GET('/box', params), // 获取设备列表
+  createBox: (data) => POST('/box', data), // 创建设备
+  updateBox: (data) => POST('/box/update', data), // 更新设备
+  deleteBox: (id) => DELETE(`/box/${id}`), // 删除设备
+  bindUser: (data) => POST('/box/bind', data), // 绑定用户
+  unbindUser: (id) => POST(`/box/unbind/${id}`, {}), // 解绑用户
 };

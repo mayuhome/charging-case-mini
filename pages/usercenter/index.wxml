@@ -13,7 +13,7 @@
   </view>
     <view class="cell-box">
     <t-cell-group wx:if="{{userInfo.role==='admin'}}">
-      <t-cell title="我的设备" bordered="{{false}}" bind:click="jumpToShops" arrow />
+      <t-cell title="我的设备" bordered="{{false}}" bind:click="jumpToBoxes" arrow />
       <t-cell title="我的商户" bordered="{{false}}" bind:click="jumpToUsers" arrow />
     </t-cell-group>
   </view>

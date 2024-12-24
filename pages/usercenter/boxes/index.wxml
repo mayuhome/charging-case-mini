@@ -1,0 +1,10 @@
+<view class="box-container">
+    <view class="box-list">
+        <block wx:for="{{boxList}}" wx:key="index">
+        <box-card boxInfo="{{item}}"></box-card>
+        </block>
+    </view>
+    <view class="footer">
+    <t-fab icon="add" bind:click="onCreateBox" theme="success" aria-label="增加"></t-fab>
+    </view>
+</view>

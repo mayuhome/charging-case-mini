@@ -10,7 +10,7 @@ const menuData = [
       title: '我的设备',
       tit: 'shebei',
       url: '',
-      type: 'shops',
+      type: 'boxes',
       hasArrow: true
     },
     {
@@ -185,9 +185,9 @@ Page({
     const { type } = currentTarget.dataset;
 
     switch (type) {
-      case 'shops': {
+      case 'boxes': {
         wx.navigateTo({
-          url: '/pages/usercenter/shops/index',
+          url: '/pages/usercenter/boxes/index',
         });
         break;
       }
@@ -255,9 +255,9 @@ Page({
     wx.navigateTo({ url: '/pages/order/order-list/index' });
   },
 
-  jumpToShops(){
+  jumpToBoxes(){
     wx.navigateTo({
-      url: '/pages/usercenter/shops/index',
+      url: '/pages/usercenter/boxes/index',
     })
   },
 

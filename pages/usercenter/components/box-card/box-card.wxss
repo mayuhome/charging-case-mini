@@ -1,0 +1,100 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    gap: 0 10px;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.001), rgba(0, 0, 0, 0.001)), #FFFFFF;
+    box-sizing: border-box;
+    border: 1px solid #CCFBF1;
+    border-radius: 12px;
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+}
+
+.title {
+    padding: 12px;
+    font-size: 14px;
+    border-radius: 12px;
+    background: #F9FAFB;
+}
+
+.card .card-content {
+    font-size: 14px;
+    color: #666;
+}
+
+.field{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 8px 0;
+  }
+
+  .title label{
+    color: #4b5563;
+  }
+  .title text{
+    font-weight: bold;
+    line-height: 21px;
+    color: #4cb5ab;
+  }
+  .field text{
+    font-size: 14px;
+    color: #4b5563;
+  }
+  .btns{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    gap: 10px;
+    margin-top: 12px;
+  }
+  .sub-button{
+    flex: 1;
+    font-size: 14px;
+    line-height: 20px;
+    padding: 8px 0;
+    color: #fff;
+    text-align: center;
+  }
+
+
+  .block {
+    width: 100vw;
+    height: 240px;
+    background: var(--td-bg-color-container);
+    border-top-left-radius: 16rpx;
+    border-top-right-radius: 16rpx;
+  }
+  
+  .header {
+    display: flex;
+    align-items: center;
+    height: 116rpx;
+  }
+  
+  .popup-title {
+    flex: 1;
+    text-align: center;
+    font-weight: 600;
+    font-size: 36rpx;
+    color: var(--td-text-color-primary);
+  }
+
+  .popup-form{
+    padding: 32rpx;
+  }
+  
+  .btn {
+    font-size: 32rpx;
+    padding: 32rpx;
+  }
+  
+  .btn--cancel {
+    color: var(--td-text-color-secondary);
+  }
+  
+  .btn--confirm {
+    color: #0052d9;
+  }
