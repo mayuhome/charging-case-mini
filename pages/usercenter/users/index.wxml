@@ -1,0 +1,28 @@
+<view class="user-container">
+    <view class="user-list">
+        <block wx:for="{{userList}}" wx:key="index">
+        <user-card userInfo="{{item}}"></user-card>
+        </block>
+    </view>
+    <view class="footer">
+    <t-fab icon="add" bind:click="onCreateUser" theme="success" aria-label="增加"></t-fab>
+    </view>
+</view>
+<t-popup visible="{{passwordVisible}}" bind:visible-change="onPasswordVisibleChange" placement="bottom">
+  <view class="block">
+    <view class="header">
+      <view class="btn btn--cancel" aria-role="button">取消</view>
+      <view class="title">修改密码</view>
+      <view class="btn btn--confirm" aria-role="button">确定</view>
+    </view>
+  </view>
+</t-popup>
+<t-popup visible="{{userUpdateVisible}}" bind:visible-change="onUserUpdateVisibleChange" placement="bottom">
+  <view class="block">
+    <view class="header">
+      <view class="btn btn--cancel" aria-role="button">取消</view>
+      <view class="title">更新信息</view>
+      <view class="btn btn--confirm" aria-role="button">确定</view>
+    </view>
+  </view>
+</t-popup>

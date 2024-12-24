@@ -17,7 +17,7 @@ const menuData = [
       title: '我的商户',
       tit: '',
       url: '',
-      type: 'clients',
+      type: 'users',
       hasArrow: true
     },
     {
@@ -191,9 +191,9 @@ Page({
         });
         break;
       }
-      case 'clients': {
+      case 'users': {
         wx.navigateTo({
-          url: '/pages/usercenter/clients/index',
+          url: '/pages/usercenter/users/index',
         })
       }
       case 'address': {
@@ -258,6 +258,14 @@ Page({
   jumpToShops(){
     wx.navigateTo({
       url: '/pages/usercenter/shops/index',
+    })
+  },
+
+  jumpToUsers(){
+    console.log('jumpToUsers');
+    
+    wx.navigateTo({
+      url: '/pages/usercenter/users/index',
     })
   },
 

@@ -58,6 +58,7 @@ onUnload(){
       }).then(res => {
         console.log('res:',res);
         this.updateUserInfo(res.userInfo);
+        setStorage('userInfo', res.userInfo);
         setStorage('token', res.accessToken);
         console.log('userinfo:', this.userInfo);
         // this.showToast('登录成功2', 'success');

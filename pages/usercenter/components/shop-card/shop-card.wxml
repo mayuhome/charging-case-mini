@@ -1,0 +1,24 @@
+<view class="card">
+    <view class="card-header">
+        <text class="card-title">Item {{index + 1}}</text>
+        <button class="edit-button" data-index="{{index}}">Edit</button>
+    </view>
+    <view class="card-content">
+        <view class="field desc">
+            <text>设备编号</text>
+            <text>{{box.code}}</text>
+        </view>
+            <view class="field desc">
+            <text>地址</text>
+            <text>{{box.address}}</text>
+        </view>
+        <view class="field desc">
+            <text>分成比例</text>
+            <text>{{box.profitShare}}</text>
+        </view>
+    </view>
+      <view class="btns">
+    <button class="sub-button" style="background: #f87171;">设备解绑</button>
+    <button class="sub-button" style="background: #fbbf24;">更新信息</button>
+  </view>
+</view>

@@ -1,0 +1,11 @@
+.user-container{
+    padding: 16px;
+    background: #F7FAFA;
+}
+.user-list{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 20px;
+}

@@ -1,0 +1,80 @@
+<view class="card">
+        <view class="title field">
+        <label for="">账号</label>
+        <text>{{userInfo.phone}}</text>
+        </view>
+    <!-- <view class="card-content"> -->
+        <view class="field desc">
+            <text>姓名</text>
+            <text>{{userInfo.name}}</text>
+        </view>
+            <view class="field desc">
+            <text>状态</text>
+            <t-tag class="margin-16" wx:if="{{userInfo.isActive}}" variant="light-outline" theme="success">激活</t-tag>
+            <t-tag class="margin-16" wx:else variant="light-outline" theme="danger">未激活</t-tag>
+        </view>
+    <!-- </view> -->
+    <view class="btns">
+        <button class="sub-button" style="background: #f87171;" bindtap="handlePasswordModal">更换密码</button>
+        <button class="sub-button sub-button--yellow" style="background: #fbbf24;" bindtap="handleUpdateInfo">更新信息</button>
+    </view>
+</view>
+
+<t-popup visible="{{passwordVisible}}" bind:visible-change="onPasswordVisibleChange" placement="bottom">
+  <view class="block">
+    <view class="header">
+      <view class="btn btn--cancel" aria-role="button" bindtap="handleCancel">取消</view>
+      <view class="popup-title">更换密码</view>
+      <view class="btn btn--confirm" aria-role="button" bindtap="handlePasswordConfirm">确定</view>
+    </view>
+    <view class="popup-form">
+        <van-cell-group>
+            <van-field
+                value="{{ password }}"
+                bind:input="onInput"
+                type="password"
+                label="新密码"
+                placeholder="请输入新密码"
+                data-field="password"
+                required
+                size="large"
+            />
+            <van-field
+            value="{{ confirmPassword }}"
+            bind:input="onInput"
+            type="password"
+            label="确认密码"
+            placeholder="请确认密码"
+            data-field="confirmPassword"
+            required
+            size="large"
+        />
+        </van-cell-group>
+    </view>
+  </view>
+</t-popup>
+
+<t-popup visible="{{userInfoVisible}}" bind:visible-change="onUserInfoVisibleChange" placement="bottom">
+  <view class="block">
+    <view class="header">
+      <view class="btn btn--cancel" aria-role="button" bindtap="handleCancel">取消</view>
+      <view class="popup-title">更新用户信息</view>
+      <view class="btn btn--confirm" aria-role="button" bindtap="handleUpdateUserInfoConfirm">确定</view>
+    </view>
+
+    <view class="popup-form">
+        <van-cell-group>
+            <van-field
+                value="{{ updateName }}"
+                bind:input="onInput"
+                type="text"
+                label="姓名"
+                data-field="updateName"
+                required
+                size="large"
+            />
+            <van-cell class="active-cell" title="状态" size="large"><van-switch checked="{{updateIsActive}}" data-field="updateIsActive" size="large" bind:change="onInput" size="20px" active-color="#07c160"/></van-cell>
+        </van-cell-group>
+    </view>      
+  </view>
+</t-popup>

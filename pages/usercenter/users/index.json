@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "用户列表",
+  "usingComponents": {
+    "t-fab": "tdesign-miniprogram/fab/fab",
+    "user-card":"../components/user-card/user-card"
+  }
+}

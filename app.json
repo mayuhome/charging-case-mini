@@ -8,7 +8,9 @@
     "pages/usercenter/components/order-group/index",
     "pages/usercenter/shops/index",
     "pages/usercenter/shops/create/index",
-    "pages/usercenter/clients/index"
+    "pages/usercenter/clients/index",
+    "pages/usercenter/users/index",
+    "pages/usercenter/users/create/index"
   ],
   "tabBar": {
     "custom": true,

@@ -43,6 +43,7 @@
   align-items: center;
   gap: 10px;
   margin-top: 12px;
+  z-index: 1;
 }
 .sub-button{
   flex: 1;
@@ -54,4 +55,5 @@
   color: #fff;
   text-align: center;
   /* margin: 0 10px; */
+  z-index: 1;
 }
