@@ -1,3 +1,5 @@
+import { BoxAPI } from '../../../../utils/api';
+
 // pages/usercenter/boxes/create/index.js
 Page({
 
@@ -5,7 +7,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    code: '',
+    address: '',
+    profitShare: '',
   },
 
   /**
@@ -57,10 +61,28 @@ Page({
 
   },
 
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage() {
+  onInput(e) {
+    this.setData({
+      [e.currentTarget.dataset.field]: e.detail
+    });
+  },
 
-  }
+  onSubmit() {
+   if(!this.data.code){
+     wx.showToast({
+       title: '请输入设备编号',
+       icon: 'none'
+     });
+     return
+   }
+   const { code, address, profitShare } = this.data;
+   BoxAPI.createBox({ code, address, profitShare }).then((res) => {
+     wx.showToast({
+       title: '创建成功',
+       icon: 'success'
+     });
+     wx.navigateBack();
+   })
+  },
+
 })

@@ -1,7 +1,7 @@
 <view class="box-container">
     <view class="box-list">
         <block wx:for="{{boxList}}" wx:key="index">
-        <box-card boxInfo="{{item}}"></box-card>
+        <box-card boxInfo="{{item}}" userList="{{userList}}"></box-card>
         </block>
     </view>
     <view class="footer">

@@ -1,4 +1,4 @@
-import { BoxAPI } from '../../../utils/api'
+import { BoxAPI, UserAPI } from '../../../utils/api'
 
 Page({
 
@@ -6,28 +6,32 @@ Page({
    * 页面的初始数据
    */
   data: {
-    boxList: []
+    boxList: [],
+    userList: []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-    this.getBoxes();
+    console.log('onLoad');
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady() {
-
+    console.log('onReady');
+    
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow() {
-
+    console.log('onShow');
+    this.getBoxes();
+    this.getUsers();
   },
 
   /**
@@ -58,21 +62,22 @@ Page({
 
   },
 
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage() {
-
-  },
-
   getBoxes() {
     BoxAPI.getBoxList().then(res => {
       console.log('res:', res);
       this.setData({
-        boxList: res || [] // 如果没有数据，就返回一个空数组
+        boxList: [...res] || [] // 如果没有数据，就返回一个空数组
+      })
     })
-  })
-},
+  },
+  getUsers() {
+    UserAPI.getUserList().then(res => {
+      console.log('user:',res);
+      this.setData({
+        userList: [...res]
+      })
+    })
+  },
 onCreateBox() {
     wx.navigateTo({
       url: '/pages/usercenter/boxes/create/index',
