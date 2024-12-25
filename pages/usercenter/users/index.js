@@ -68,7 +68,7 @@ Page({
     UserAPI.getUserList().then(res => {
       console.log('user:',res);
       this.setData({
-        userList: [...res]
+        userList: [...res] || [] // 如果没有数据，就返回一个空数组
       })
     })
   },

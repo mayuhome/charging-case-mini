@@ -1,7 +1,9 @@
 import { BoxAPI } from '../../../../utils/api'
 
 Component({
-  multipleSlots: true,
+  options: {
+    multipleSlots: true,
+  },
 
   /**
    * 组件的属性列表
