@@ -17,6 +17,11 @@
       <t-cell title="我的商户" bordered="{{false}}" bind:click="jumpToUsers" arrow />
     </t-cell-group>
   </view>
+      <view class="cell-box">
+    <t-cell-group wx:if="{{userInfo.role==='admin'}}">
+      <t-cell title="数据维护" bordered="{{false}}" bind:click="jumpToMaintain" arrow />
+    </t-cell-group>
+  </view>
   <view class="cell-box">
     <t-cell-group>
       <t-cell title="设备编号" bordered="{{false}}" note="{{userInfo.code}}" />

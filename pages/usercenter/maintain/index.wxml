@@ -1,0 +1,36 @@
+<view class="maintain-container">
+    <view class="maintain-card">
+        <view class="field">
+            <t-cell title="选择日期" hover note="{{monthText}}" arrow data-mode="month" bindtap="showPicker" t-class="panel-item" />
+
+            <!-- 年月 -->
+            <t-date-time-picker
+            title="选择日期"
+            visible="{{monthVisible}}"
+            mode="month"
+            value="{{month}}"
+            format="YYYY-MM"
+            bindchange="onConfirm"
+            bindpick="onColumnChange"
+            bindcancel="hidePicker"
+            start="{{start}}"
+            end="{{end}}"
+            />
+        </view>   
+    <view class="field">
+        <t-radio-group t-class="horizontal-box" value="{{inputType}}" bind:change="onInputTypeChange">
+            <view wx:for="{{['上传文件', '手动输入']}}" wx:key="index" class="card {{inputType == item ? 'card--active' : ''}}">
+                <t-icon wx:if="{{inputType == item}}" name="check" t-class="card__icon" />
+                <t-radio value="{{item}}" label="{{item}}" icon="none" />
+            </view>
+        </t-radio-group>
+    </view>
+    <view wx:if="{{inputType === '上传文件'}}" class="field">
+        <!-- <t-cell title="选择文件" hover note="{{fileText}}" arrow bindtap="onChooseFile" t-class="panel-item" /> -->
+        <van-uploader class="upload" accept="file">
+             <van-button icon="plus" type="primary" class="upload-btn">上传图片</van-button>
+        </van-uploader>
+    </view>
+        <button class="submit-btn" bindtap="onSubmit">提交</button>
+    </view>
+</view>

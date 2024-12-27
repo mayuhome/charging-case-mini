@@ -1,0 +1,13 @@
+{
+  "navigationBarTitleText": "数据维护",
+  "styleIsolation": "apply-shared",
+  "usingComponents": {
+        "t-cell": "tdesign-miniprogram/cell/cell",
+        "t-date-time-picker": "tdesign-miniprogram/date-time-picker/date-time-picker",
+        "t-radio-group": "tdesign-miniprogram/radio-group/radio-group",
+        "t-radio": "tdesign-miniprogram/radio/radio",
+        "t-icon": "tdesign-miniprogram/icon/icon",
+        "van-uploader": "@vant/weapp/uploader/index",
+        "van-button": "@vant/weapp/button/index"
+  }
+}

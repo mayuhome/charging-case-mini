@@ -21,6 +21,13 @@ const menuData = [
       hasArrow: true
     },
     {
+      title: '数据维护',
+      tit: 'weihu',
+      url: '',
+      type: 'maintain',
+      hasArrow: true
+    },
+    {
       title: '地址',
       tit: 'qweqweqw',
       url: '',
@@ -194,7 +201,14 @@ Page({
       case 'users': {
         wx.navigateTo({
           url: '/pages/usercenter/users/index',
-        })
+        });
+        break;
+      }
+      case 'maintain': {
+        wx.navigateTo({
+          url: '/pages/usercenter/maintain/index',
+        });
+        break;
       }
       case 'address': {
         wx.navigateTo({ url: '/pages/usercenter/address/list/index' });
@@ -266,6 +280,12 @@ Page({
     
     wx.navigateTo({
       url: '/pages/usercenter/users/index',
+    })
+  },
+
+  jumpToMaintain(){    
+    wx.navigateTo({
+      url: '/pages/usercenter/maintain/index',
     })
   },
 
