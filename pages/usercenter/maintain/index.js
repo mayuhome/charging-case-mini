@@ -1,4 +1,4 @@
-// pages/usercenter/maintain/index.js
+import { BoxAPI } from '../../../utils/api';
 Page({
 
   /**
@@ -15,6 +15,9 @@ Page({
     end: '2030-09-09 12:12:12',
     inputTypeVisible: false,
     inputType: '上传文件', // '上传文件', '手动输入'
+    boxList: [],
+    boxVisible: false,
+    formList: [],
   },
 
   /**
@@ -35,7 +38,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow() {
-
+    this.getBoxList();
   },
 
   /**
@@ -112,5 +115,28 @@ Page({
   },
   onInputTypeChange(e) {
     this.setData({ inputType: e.detail.value });
+  },
+  onBoxPicker() {
+    console.log('onBoxPicker');
+    
+    this.setData({
+      boxVisible: true,
+    });
+    console.log('boxList', this.data.boxList);
+    
+  },
+  handleAddBox() {
+    const { formList } = this.data;
+    formList.push({
+      id: formList.length,
+      value: '',
+      label: `箱${formList.length + 1}`,
+    });
+    this.setData({ formList });
+  },
+  getBoxList() {  
+    BoxAPI.getBoxList().then(res => {
+      this.setData({ boxList: [...res] });
+    });
   },
 })

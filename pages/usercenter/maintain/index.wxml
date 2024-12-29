@@ -28,9 +28,48 @@
     <view wx:if="{{inputType === '上传文件'}}" class="field">
         <!-- <t-cell title="选择文件" hover note="{{fileText}}" arrow bindtap="onChooseFile" t-class="panel-item" /> -->
         <van-uploader class="upload" accept="file">
-             <van-button icon="plus" type="primary" class="upload-btn">上传图片</van-button>
+             <van-button icon="plus" type="primary" class="upload-btn">上传文件</van-button>
         </van-uploader>
     </view>
+    <view wx:else class="field">
+        <view>
+            <van-button type="primary" icon="star-o" block bind:click="handleAddBox">新增设备</van-button>
+        </view>
+          
+        <view wx:for="{{formList}}" wx:key="index" class="form-box">
+            <!-- <t-cell class="mb-16" size="small" title="选择设备" arrow hover note="{{boxText}}" bind:click="onBoxPicker" /> -->
+            <van-cell title="选择设备" is-link value="内容" bind:click="onBoxPicker"/>
+            <!-- <van-picker columns="{{ columns }}" bind:change="onChange" /> -->
+            <t-picker
+                visible="{{boxVisible}}"
+                value="{{boxValue}}"
+                title="选择设备"
+                cancelBtn="取消"
+                confirmBtn="确认"
+                usingCustomNavbar
+                bindchange="onPickerChange"
+                bindpick="onColumnChange"
+                bindcancel="onPickerCancel"
+                >
+                <t-picker-item options="{{boxList}}">
+                    <block wx:for="{{boxList}}" wx:key="index" wx:for-item="option">
+                    <view class="label-suffix" data-value="{{option.id}}">
+                        {{option.code}}xxx
+                    </view>
+                    </block>
+                </t-picker-item>
+            </t-picker>
+                <!-- <t-input size="small" label="数值" placeholder="请输入当月数值" align="right" type="number" bindinput="onInputChange" data-index="{{index}}" value="{{item.value}}"/> -->
+                  <van-field
+                    label="数值"
+                    placeholder="请输入当月数值"
+                    border="{{ false }}"
+                    input-align="right"
+                    type="number" bindinput="onInputChange" data-index="{{index}}" model:value="{{item.value}}"
+                />
+        </view>
+    </view>
+      
         <button class="submit-btn" bindtap="onSubmit">提交</button>
     </view>
 </view>

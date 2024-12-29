@@ -8,6 +8,13 @@
         "t-radio": "tdesign-miniprogram/radio/radio",
         "t-icon": "tdesign-miniprogram/icon/icon",
         "van-uploader": "@vant/weapp/uploader/index",
-        "van-button": "@vant/weapp/button/index"
+        "van-button": "@vant/weapp/button/index",
+        "t-input": "tdesign-miniprogram/input/input",
+        "van-cell": "@vant/weapp/cell/index",
+        "van-cell-group": "@vant/weapp/cell-group/index",
+        "van-field": "@vant/weapp/field/index",
+        "van-picker": "@vant/weapp/picker/index",
+        "t-picker": "tdesign-miniprogram/picker/picker",
+        "t-picker-item": "tdesign-miniprogram/picker-item/picker-item"
   }
 }
