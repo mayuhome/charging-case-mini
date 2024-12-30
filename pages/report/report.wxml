@@ -1,15 +1,35 @@
 <view class="report-container">
-  <view class="header">head card</view>
+  <view class="header">
+    <view>
+      待提现
+      <view style="font-size: 28px; font-weight: 600">
+        ¥ {{currentAmount || 0}}
+      </view>
+        
+    </view>
+      <view>
+        总收入
+        <view style="font-size: 28px; font-weight: 600">
+          ¥ {{totalAmount || 0}}
+        </view>
+          
+      </view>
+        
+  </view>
   <view class="incomes">
     <!-- <view class="search"> -->
-      <van-search value="{{ keyword }}" placeholder="请输入设备编号" />
+      <van-search value="{{ keyword }}" placeholder="请输入设备编号" bindchange="handleSearch" />
     <!-- </view> -->
+
+       
     <view wx:for="{{incomes}}" class="income" wx:key="item">
-      <view>
+              <view>
         <view class="date">{{item.yearMonth}}</view>
         <view class="code">设备编号：{{item.code}}</view>
       </view>
       <view class="amount">¥ {{item.amount}}</view>
     </view>
+        
+
   </view>
 </view>

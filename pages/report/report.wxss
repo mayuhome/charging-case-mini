@@ -8,12 +8,17 @@
 }
 
 .header{
-    background-color: #fff;
+    background-color: #15B8A6;
     border-radius: 12px;
-    height: 150px;
+    height: 120px;
     display: block;
     margin: 12px 18px;
     padding: 12px;
+    color: #fff;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .incomes{
