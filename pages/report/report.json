@@ -1,5 +1,6 @@
 {
-  "navigationBarTitleText": "报表",
+  "navigationBarTitleText": "收益报表",
   "usingComponents": {
+    "van-search": "@vant/weapp/search/index"
   }
 }

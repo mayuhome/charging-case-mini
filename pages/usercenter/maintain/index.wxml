@@ -32,40 +32,23 @@
         </van-uploader>
     </view>
     <view wx:else class="field">
-        <view>
-            <van-button type="primary" icon="star-o" block bind:click="handleAddBox">新增设备</van-button>
+        <view style="margin: auto 24px">
+            <van-button type="primary" icon="plus" block bind:click="handleAddBox">新增设备</van-button>
         </view>
           
         <view wx:for="{{formList}}" wx:key="index" class="form-box">
             <!-- <t-cell class="mb-16" size="small" title="选择设备" arrow hover note="{{boxText}}" bind:click="onBoxPicker" /> -->
-            <van-cell title="选择设备" is-link value="内容" bind:click="onBoxPicker"/>
-            <!-- <van-picker columns="{{ columns }}" bind:change="onChange" /> -->
-            <t-picker
-                visible="{{boxVisible}}"
-                value="{{boxValue}}"
-                title="选择设备"
-                cancelBtn="取消"
-                confirmBtn="确认"
-                usingCustomNavbar
-                bindchange="onPickerChange"
-                bindpick="onColumnChange"
-                bindcancel="onPickerCancel"
-                >
-                <t-picker-item options="{{boxList}}">
-                    <block wx:for="{{boxList}}" wx:key="index" wx:for-item="option">
-                    <view class="label-suffix" data-value="{{option.id}}">
-                        {{option.code}}xxx
-                    </view>
-                    </block>
-                </t-picker-item>
-            </t-picker>
+            <van-cell title="选择设备" is-link value="{{item.code}}" data-index="{{index}}" bind:click="onBoxPicker"/>
+            <!-- <van-picker wx:if="{{boxVisible}}" columns="{{ boxList }}" value-key="code" bind:change="onChange" /> -->
+
+
                 <!-- <t-input size="small" label="数值" placeholder="请输入当月数值" align="right" type="number" bindinput="onInputChange" data-index="{{index}}" value="{{item.value}}"/> -->
                   <van-field
                     label="数值"
                     placeholder="请输入当月数值"
                     border="{{ false }}"
                     input-align="right"
-                    type="number" bindinput="onInputChange" data-index="{{index}}" model:value="{{item.value}}"
+                    type="{{'digit'}}" bindinput="onInputChange" data-index="{{index}}" value="{{item.amount}}"
                 />
         </view>
     </view>
@@ -73,3 +56,17 @@
         <button class="submit-btn" bindtap="onSubmit">提交</button>
     </view>
 </view>
+            <t-picker
+                visible="{{boxVisible}}"
+                title="选择设备"
+                cancelBtn="取消"
+                confirmBtn="确认"
+                data-index="{{pickerIndex}}"
+                bindchange="onPickerChange"
+                bindpick="onColumnChange"
+                bindcancel="onPickerCancel"
+                bindconfirm="onPickerConfirm"
+                >
+                <t-picker-item options="{{boxList}}">
+                </t-picker-item>
+            </t-picker>

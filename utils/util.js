@@ -14,6 +14,17 @@ const formatNumber = n => {
   return n[1] ? n : `0${n}`
 }
 
+const debounce = (func, delay = 500) => {
+  let timer = null;
+  return (...args) => {
+    if (timer) clearTimeout(timer);
+    timer = setTimeout(() => {
+      func.apply(this, args)
+    }, delay)
+  }
+}
+
 module.exports = {
-  formatTime
+  formatTime,
+  debounce
 }

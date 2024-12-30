@@ -1,4 +1,5 @@
 // utils/api.js
+import { get } from 'mobx-miniprogram';
 import { GET, POST } from './request';
 
 // 用户相关接口
@@ -18,3 +19,8 @@ export const BoxAPI = {
   bindUser: (data) => POST('/box/bind', data), // 绑定用户
   unbindUser: (id) => POST(`/box/unbind/${id}`, {}), // 解绑用户
 };
+
+export const IncomeAPI = {
+  createByManual: (data) => POST('/income/create-by-manual', data),
+  getIncomeList: () => GET('/income/box-income'),
+}

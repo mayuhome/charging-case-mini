@@ -1,4 +1,5 @@
-import { BoxAPI } from '../../../utils/api';
+import { BoxAPI, IncomeAPI } from '../../../utils/api';
+import { debounce } from '../../../utils/util';
 Page({
 
   /**
@@ -18,6 +19,7 @@ Page({
     boxList: [],
     boxVisible: false,
     formList: [],
+    pickerIndex: -1,
   },
 
   /**
@@ -116,27 +118,87 @@ Page({
   onInputTypeChange(e) {
     this.setData({ inputType: e.detail.value });
   },
-  onBoxPicker() {
-    console.log('onBoxPicker');
-    
+  onBoxPicker(e) {
+    console.log('onBoxPicker:',e);
+    const index = e.currentTarget.dataset.index;
     this.setData({
       boxVisible: true,
+      pickerIndex: index,
     });
     console.log('boxList', this.data.boxList);
-    
   },
   handleAddBox() {
     const { formList } = this.data;
     formList.push({
-      id: formList.length,
-      value: '',
-      label: `箱${formList.length + 1}`,
+      amount: 0,
+      boxId: null,
+      code: ''
     });
     this.setData({ formList });
   },
+  onPickerCancel() {
+    console.log('onPickerCancel');
+    this.setData({
+      boxVisible: false,
+    });
+  },
+  onPickerChange(e) {
+    console.log('onPickerChange', e);
+  },
+  onPickerConfirm(e) {
+    console.log('onPickerConfirm:', e);
+
+    this.setData({
+      [`formList[${this.data.pickerIndex}].code`]: e.detail.label[0],
+      [`formList[${this.data.pickerIndex}].boxId`]: e.detail.value[0],
+      boxVisible: false,
+    })
+  },
+  onInputChange(e) {
+
+    console.log('e0:',e);
+    const { index } = e.currentTarget.dataset;
+    const reg = /^\d+(\.\d+)?$/;
+
+
+
+      if (!reg.test(e.detail)) {
+        wx.showToast({
+          title: '请输入数字',
+          icon: 'none'
+        });
+        this.setData({
+          [`formList[${index}].amount`]: 0
+        });
+        return;
+      }
+      this.setData({
+        [`formList[${index}].amount`]: e.detail || 0
+      });
+  },
+  onSubmit() {
+    const { formList, monthText } = this.data;
+    const data = {
+      date: monthText + '-01',
+      incomes: formList
+    }
+    console.log('data:', data);
+    IncomeAPI.createByManual(data).then(res => {
+      wx.showToast({
+        title: '创建成功',
+        icon: 'success'
+      })
+    })
+  },
   getBoxList() {  
     BoxAPI.getBoxList().then(res => {
-      this.setData({ boxList: [...res] });
+      const list = res.map(item => {
+        return {
+          value: item.id,
+          label: item.code,
+        };
+      })
+      this.setData({ boxList: [...list] });
     });
   },
 })

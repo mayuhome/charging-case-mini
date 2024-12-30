@@ -60,7 +60,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
-    flex-wrap: wrap;
+    flex-wrap: no-wrap;
     margin: 32rpx;
   }
   

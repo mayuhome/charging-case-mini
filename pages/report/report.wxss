@@ -1,0 +1,58 @@
+.report-container{
+    background: #F7FAFA;
+    display: flex;
+    flex-direction: column;
+    /* height: 100vh; */
+    /* gap: 20px; */
+    justify-content: start;
+}
+
+.header{
+    background-color: #fff;
+    border-radius: 12px;
+    height: 150px;
+    display: block;
+    margin: 12px 18px;
+    padding: 12px;
+}
+
+.incomes{
+    background-color: #fff;
+    border-radius: 12px;
+    margin: 12px 18px;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    overflow-y: scroll;
+
+}
+.income{
+    /* height: 40px; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: rgba(0, 0, 0, 0.05) 1px solid;
+}
+.income .date{
+    font-size: 16px;
+    color: #4B5563;
+    font-family: Roboto;
+    font-style: normal;
+    letter-spacing: 0px;
+}
+.income .code {
+    font-family: Roboto;
+    font-style: normal;
+    letter-spacing: 0px;
+    font-size: 14px; 
+    color: #6B7280;
+}
+.income .amount{
+    font-size: 16px;
+    color:  #15B8A6;
+    font-family: Roboto;
+    font-style: normal;
+    letter-spacing: 0px;
+}
