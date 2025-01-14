@@ -9,12 +9,12 @@ Page({
 
   onLoad() {
     IncomeAPI.getIncomeList().then(res => {
-      const totalAmount = res.reduce((total, item) => total + item.amount, 0);
-      const currentAmount = res.reduce((total, item) => total + item.currentAmount, 0);
+      const totalAmount = res.map(m => m.amount).reduce((total, item) => parseFloat(item) + parseFloat(total), 0);
+      const currentAmount = res.map(m => m.currentAmount).reduce((total, item) => parseFloat(item) + parseFloat(total), 0);
       this.setData({
         incomes: res,
-        totalAmount,
-        currentAmount
+        totalAmount: totalAmount.toFixed(2),
+        currentAmount: currentAmount.toFixed(2)
       })
     })
   },
