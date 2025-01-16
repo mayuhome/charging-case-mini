@@ -1,5 +1,14 @@
 <view class="page">
-  <view class="header">
+    <!-- 自定义导航栏 -->
+      <van-nav-bar
+  title="首页"
+  left-arrow
+  class="custom-navbar"
+  bind:click-left="onClickLeft"
+/>
+  <view class="content">
+
+<view class="header">
     <text class="title">欢迎使用共享充电宝</text>
     <text class="subtitle">随时随地，为您的设备充电</text>
     <image src="/assets/充电设施.png" class="banner" mode="aspectFill" />
@@ -44,5 +53,12 @@
       </view>
     </view>
   </view>
+  </view>
+  
+  <t-tab-bar t-class="t-tab-bar" value="{{tabName}}" bindchange="onChange" theme="tag" split="{{false}}">
+  <t-tab-bar-item wx:for="{{tabList}}" wx:key="value" value="{{item.value}}" icon="{{item.icon}}">
+    {{item.label}}
+  </t-tab-bar-item>
+</t-tab-bar>
 </view>
 

@@ -1,8 +1,22 @@
 .page {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  height: 100vh;
+  background: #F7FAFA;
+}
+.custom-navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+}
+.content{
+  flex: 1;
+  margin-top: 80px;
+  margin-bottom: 40px;
+  overflow: auto;
   padding: 40rpx;
+  background-color: #fff;
 }
 
 .header {
@@ -88,4 +102,9 @@
   font-size: 24rpx;
   color: #666;
   margin-top: 10rpx;
+}
+.t-tab-bar{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }

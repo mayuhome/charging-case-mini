@@ -1,11 +1,30 @@
-.report-container{
-    background: #F7FAFA;
+.page{
+    height: 100vh;
     display: flex;
     flex-direction: column;
-    /* height: 100vh; */
-    /* gap: 20px; */
-    justify-content: start;
+    background: #F7FAFA;
 }
+.custom-navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+  }
+.content{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    overflow: auto;
+    margin-top: 80px;
+    margin-bottom: 40px;
+    padding: 40rpx 0;
+}
+.t-tab-bar{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
 
 .header{
     background-color: #15B8A6;
@@ -25,11 +44,12 @@
     background-color: #fff;
     border-radius: 12px;
     margin: 12px 18px;
+    margin-bottom: 48px;
     padding: 12px;
     display: flex;
     flex-direction: column;
-    gap: 8px;
-    overflow-y: scroll;
+    /* gap: 8px; */
+    overflow: auto;
 
 }
 .income{
@@ -37,7 +57,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 8px 0;
+    padding: 16px 0;
     border-bottom: rgba(0, 0, 0, 0.05) 1px solid;
 }
 .income .date{

@@ -62,8 +62,8 @@ onUnload(){
         setStorage('token', res.accessToken);
         console.log('userinfo:', this.userInfo);
         // this.showToast('登录成功2', 'success');
-        wx.switchTab({
-          url: '/pages/usercenter/index', // 跳转到首页
+        wx.redirectTo({
+          url: '/pages/home/home', // 跳转到首页
         });
         console.log('tianzhuang 2');
       })

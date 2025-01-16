@@ -1,16 +1,16 @@
 export default [
   {
-    icon: 'home',
-    text: '首页',
+    icon: 'home-filled',
+    text: '首页2',
     url: 'pages/home/home',
   },
   {
-    icon: 'sort',
+    icon: 'table-filled',
     text: '报表',
     url: 'pages/report/report',
   },
   {
-    icon: 'person',
+    icon: 'user-filled',
     text: '个人中心',
     url: 'pages/usercenter/index',
   },

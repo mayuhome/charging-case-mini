@@ -13,30 +13,6 @@
     "pages/usercenter/boxes/create/index",
     "pages/usercenter/maintain/index"
   ],
-  "tabBar": {
-    "custom": true,
-    "color": "#666666",
-    "selectedColor": "#FF5F15",
-    "backgroundColor": "#ffffff",
-    "borderStyle": "black",
-    "list": [
-      {
-        "pagePath": "pages/home/home",
-        "text": "首页"
-      },
-      {
-        "pagePath": "pages/report/report",
-        "text": "报表"
-      },
-      {
-        "pagePath": "pages/usercenter/index",
-        "text": "我的"
-      }
-    ]
-  },
-  "requiredPrivateInfos": [
-    "chooseAddress"
-  ],
   "lazyCodeLoading": "requiredComponents",
   "usingComponents": {
     "t-popup": "tdesign-miniprogram/popup/popup",
@@ -50,7 +26,8 @@
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "Weixin",
-    "navigationBarTextStyle": "black"
+    "navigationBarTextStyle": "black",
+    "navigationStyle": "custom"
   },
   "sitemapLocation": "sitemap.json",
   "permission": {

@@ -4,9 +4,18 @@ Page({
     keyword: '',
     incomes: [],
     totalAmount: 0,
-    currentAmount: 0
+    currentAmount: 0,
+    tabName: '/pages/report/report',
+    tabList: [
+      { value: '/pages/home/home', label: '首页', icon: 'home' },
+      { value: '/pages/report/report', label: '应用', icon: 'app' },
+      { value: '/pages/usercenter/index', label: '我的', icon: 'user' },
+    ],
   },
-
+  onClickLeft() {
+    // 返回上一页或自定义逻辑
+    wx.navigateBack();
+  },
   onLoad() {
     IncomeAPI.getIncomeList().then(res => {
       const totalAmount = res.map(m => m.amount).reduce((total, item) => parseFloat(item) + parseFloat(total), 0);
@@ -31,5 +40,14 @@ Page({
       message,
       theme,
     });
+  },
+
+  onChange(e) {
+    this.setData({
+      tabName: e.detail.value
+    })
+    wx.redirectTo({
+      url: e.detail.value,
+    })
   },
 });

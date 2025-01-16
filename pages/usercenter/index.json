@@ -8,7 +8,11 @@
     "t-cell": "tdesign-miniprogram/cell/cell",
     "t-toast": "tdesign-miniprogram/toast/toast",
     "t-order-group": "./components/order-group/index",
-    "t-user-center-card": "./components/user-center-card/index"
+    "t-user-center-card": "./components/user-center-card/index",
+    "t-tab-bar": "tdesign-miniprogram/tab-bar/tab-bar",
+    "t-tab-bar-item": "tdesign-miniprogram/tab-bar-item/tab-bar-item",
+    "t-sticky": "tdesign-miniprogram/sticky/sticky",
+    "van-nav-bar": "@vant/weapp/nav-bar/index"
   },
   "enablePullDownRefresh": true
 }

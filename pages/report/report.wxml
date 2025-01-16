@@ -1,5 +1,13 @@
-<view class="report-container">
-  <view class="header">
+<view class="page">
+      <!-- 自定义导航栏 -->
+      <van-nav-bar
+  title="收益"
+  left-arrow
+  class="custom-navbar"
+  bind:click-left="onClickLeft"
+/>
+  <view class="content">
+      <view class="header">
     <view>
       待提现
       <view style="font-size: 28px; font-weight: 600">
@@ -32,4 +40,10 @@
         
 
   </view>
+  </view>
+    <t-tab-bar t-class="t-tab-bar" value="{{tabName}}" bindchange="onChange" theme="tag" split="{{false}}">
+  <t-tab-bar-item wx:for="{{tabList}}" wx:key="value" value="{{item.value}}" icon="{{item.icon}}">
+    {{item.label}}
+  </t-tab-bar-item>
+</t-tab-bar>
 </view>

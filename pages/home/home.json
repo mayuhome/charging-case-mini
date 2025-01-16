@@ -1,9 +1,14 @@
 {
   "navigationBarTitleText": "首页",
   "component": true,
+  "styleIsolation": "apply-shared",
   "usingComponents": {
     "t-icon": "tdesign-miniprogram/icon/icon",
     "t-tabs": "tdesign-miniprogram/tabs/tabs",
-    "t-tab-panel": "tdesign-miniprogram/tab-panel/tab-panel"
+    "t-tab-panel": "tdesign-miniprogram/tab-panel/tab-panel",
+    "t-tab-bar": "tdesign-miniprogram/tab-bar/tab-bar",
+    "t-tab-bar-item": "tdesign-miniprogram/tab-bar-item/tab-bar-item",
+    "t-sticky": "tdesign-miniprogram/sticky/sticky",
+    "van-nav-bar": "@vant/weapp/nav-bar/index"
   }
 }

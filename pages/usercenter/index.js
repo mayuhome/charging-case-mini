@@ -119,10 +119,20 @@ const getDefaultData = () => ({
   currAuthStep: 1,
   showKefu: true,
   versionNo: '',
+  tabName: '/pages/usercenter/index',
+  tabList: [
+    { value: '/pages/home/home', label: '首页', icon: 'home' },
+    { value: '/pages/report/report', label: '应用', icon: 'app' },
+    { value: '/pages/usercenter/index', label: '我的', icon: 'user' },
+  ],
 });
 
 Page({
   data: getDefaultData(),
+  onClickLeft() {
+    // 返回上一页或自定义逻辑
+    wx.navigateBack();
+  },
 
   onLoad() {
     this.getVersionInfo();
@@ -135,8 +145,8 @@ Page({
     this.storeBindings.destroyStoreBindings();
   },
   onShow() {
-    this.getTabBar().init();
-    this.init();
+    // this.getTabBar().init();
+    // this.init();
   },
   onPullDownRefresh() {
     this.init();
@@ -147,7 +157,14 @@ Page({
     // this.fetUseriInfoHandle();
   },
 
-  
+  onChange(e) {
+    this.setData({
+      tabName: e.detail.value
+    }),
+    wx.redirectTo({
+      url: e.detail.value,
+    })
+  },
 
 
 
