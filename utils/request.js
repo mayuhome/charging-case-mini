@@ -16,9 +16,16 @@ const request = (url, method = 'GET', data = {}, options = {}) => {
         ...options.headers, // 支持自定义 Header
       },
       success: (res) => {
-        console.log('success:',res);
+        console.log('success:', res.data.code);
         if (res.data.code === 200) {
           resolve(res.data.data);
+        } else if (res.data.code === 401) {
+          console.log('token 失效');
+          // token 失效
+          wx.clearStorageSync();
+          wx.reLaunch({
+            url: '/pages/login/login',
+          });
         } else {
           // 自定义处理错误
           wx.showToast({

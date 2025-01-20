@@ -1,7 +1,7 @@
 .card {
     display: flex;
     flex-direction: column;
-    padding: 16px;
+    padding: 16px 24px;
     gap: 0 10px;
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.001), rgba(0, 0, 0, 0.001)), #FFFFFF;
     box-sizing: border-box;

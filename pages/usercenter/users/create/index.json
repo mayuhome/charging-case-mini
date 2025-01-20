@@ -1,10 +1,12 @@
 {
   "navigationBarTitleText": "创建商户",
+  "component": true,
   "usingComponents": {
     "t-input": "tdesign-miniprogram/input/input",
     "van-field": "@vant/weapp/field/index",
     "van-switch": "@vant/weapp/switch/index",
     "van-cell": "@vant/weapp/cell/index",
-    "van-cell-group": "@vant/weapp/cell-group/index"
+    "van-cell-group": "@vant/weapp/cell-group/index",
+    "van-nav-bar": "@vant/weapp/nav-bar/index"
   }
 }

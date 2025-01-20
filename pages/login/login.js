@@ -9,7 +9,7 @@ Page({
     password: '', // 用户密码
   },
 onLoad(){
-  this.storeBidings = createStoreBindings(this, {
+  this.storeBindings = createStoreBindings(this, {
     store: userStore,
     fields: ['userInfo', 'isAuthenticated'],
     actions: ['updateUserInfo', 'logout']
@@ -17,7 +17,7 @@ onLoad(){
 },
 
 onUnload(){
-  this.storeBidings.destroyStoreBindings();
+  this.storeBindings.destroyStoreBindings();
 },
   // 监听手机号输入
   onPhoneInput(event) {
@@ -57,36 +57,13 @@ onUnload(){
         password,
       }).then(res => {
         console.log('res:',res);
-        this.updateUserInfo(res.userInfo);
+        this.updateUserInfo(res.userInfo);        
         setStorage('userInfo', res.userInfo);
         setStorage('token', res.accessToken);
-        console.log('userinfo:', this.userInfo);
-        // this.showToast('登录成功2', 'success');
         wx.redirectTo({
           url: '/pages/home/home', // 跳转到首页
         });
-        console.log('tianzhuang 2');
       })
-      // success: (res) => {
-      //   if (res.data && res.data.code === 200) {
-      //     // 登录成功，保存 token
-      //     wx.setStorageSync('token', res.data.data.accessToken);
-      //     this.showToast('登录成功2', 'success');
-      //     console.log('tiaozhuan');
-      //     wx.switchTab({
-      //       url: '/pages/usercenter/index', // 跳转到首页
-      //     });
-      //     console.log('tianzhuang 2');
-      //   } else {
-      //     // 登录失败提示
-      //     this.showToast(res.data.message || '登录失败', 'fail');
-      //   }
-      // },
-      // fail: (err) => {
-      //   console.error('登录请求失败', err);
-      //   this.showToast('网络错误，请稍后再试', 'fail');
-      // },
-    // });
   },
 
   // 显示 Toast 提示

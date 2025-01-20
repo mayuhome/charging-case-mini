@@ -61,10 +61,13 @@ Page({
   onReachBottom() {
 
   },
+  onClickLeft() {
+    // 返回上一页或自定义逻辑
+    wx.navigateBack();
+  },
 
   getBoxes() {
     BoxAPI.getBoxList().then(res => {
-      console.log('res:', res);
       this.setData({
         boxList: [...res] || [] // 如果没有数据，就返回一个空数组
       })
@@ -72,7 +75,6 @@ Page({
   },
   getUsers() {
     UserAPI.getUserList().then(res => {
-      console.log('user:',res);
       this.setData({
         userList: [...res]
       })
@@ -83,4 +85,6 @@ onCreateBox() {
       url: '/pages/usercenter/boxes/create/index',
     })
   }
+
+
 })

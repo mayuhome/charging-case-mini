@@ -7,6 +7,7 @@
   class="custom-navbar"
   bind:click-left="onClickLeft"
 />
+{{userInfo.role}}
   <view class="content">
     <t-user-center-card
   userInfo="{{userInfo || null}}"

@@ -1,6 +1,7 @@
 {
   "navigationBarTitleText": "个人中心",
   "navigationStyle": "custom",
+  "component": true,
   "usingComponents": {
     "t-popup": "tdesign-miniprogram/popup/popup",
     "t-icon": "tdesign-miniprogram/icon/icon",

@@ -1,6 +1,9 @@
-<view class="container">
+<view class="page">
+      <van-nav-bar title="商户创建" left-arrow class="custom-navbar" bind:click-left="onClickLeft" />
+
+      <view class="content">
         <!-- 标题 -->
-    <view class="title">新建用户</view>
+    <!-- <view class="title">新建用户</view> -->
     <!-- 手机号 -->
     <van-cell-group>
       <van-field
@@ -52,4 +55,6 @@
 
   <!-- 提交按钮 -->
   <button class="submit-btn" bindtap="onSubmit" disabled="{{confirmPasswordErrorMsg}}">提交</button>
+</view>
+
 </view>

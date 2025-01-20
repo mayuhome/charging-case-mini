@@ -8,7 +8,7 @@ const menuData = [
   [
     {
       title: '我的设备',
-      tit: 'shebei',
+      tit: 'sheBei',
       url: '',
       type: 'boxes',
       hasArrow: true
@@ -22,28 +22,28 @@ const menuData = [
     },
     {
       title: '数据维护',
-      tit: 'weihu',
+      tit: 'weiHu',
       url: '',
       type: 'maintain',
       hasArrow: true
     },
     {
       title: '地址',
-      tit: 'qweqweqw',
+      tit: 'diZhi',
       url: '',
       type: 'address',
       hasArrow: false
     },
     {
       title: '设备编号',
-      tit: 'qweqweqwe123123',
+      tit: 'bianHao',
       url: '',
       type: 'code',
       hasArrow: false
     },
     {
       title: '分成比例',
-      tit: '',
+      tit: 'fenCheng',
       url: '',
       type: 'point',
       hasArrow: false
@@ -52,14 +52,14 @@ const menuData = [
   [
     {
       title: '帮助中心',
-      tit: '',
+      tit: 'bangZhu',
       url: '',
       type: 'help-center',
       hasArrow: true
     },
     {
       title: '客服热线',
-      tit: '',
+      tit: 'keFu',
       url: '',
       type: 'service',
       icon: 'service',
@@ -76,30 +76,9 @@ const orderTagInfos = [
     tabType: 5,
     status: 1,
   },
-  // {
-  //   title: '待发货',
-  //   iconName: 'deliver',
-  //   orderNum: 0,
-  //   tabType: 10,
-  //   status: 1,
-  // },
-  // {
-  //   title: '待收货',
-  //   iconName: 'package',
-  //   orderNum: 0,
-  //   tabType: 40,
-  //   status: 1,
-  // },
-  // {
-  //   title: '待评价',
-  //   iconName: 'comment',
-  //   orderNum: 0,
-  //   tabType: 60,
-  //   status: 1,
-  // },
   {
     title: '已收款',
-    iconName: 'exchang',
+    iconName: 'exchange',
     orderNum: 0,
     tabType: 10,
     status: 1,
@@ -118,7 +97,7 @@ const getDefaultData = () => ({
   customerServiceInfo: {},
   currAuthStep: 1,
   showKefu: true,
-  versionNo: '',
+  versionNo: '0.1.0',
   tabName: '/pages/usercenter/index',
   tabList: [
     { value: '/pages/home/home', label: '首页', icon: 'home' },
@@ -133,13 +112,16 @@ Page({
     // 返回上一页或自定义逻辑
     wx.navigateBack();
   },
+  
 
   onLoad() {
     this.getVersionInfo();
     this.storeBindings = createStoreBindings(this, {
       store: userStore,
       fields: ['userInfo', 'isAuthenticated'],
+      actions: ['updateUserInfo', 'logout']
     });
+    this.init();
   },
   onUnload() {
     this.storeBindings.destroyStoreBindings();
@@ -154,7 +136,8 @@ Page({
 
   init() {
     console.log('init');
-    // this.fetUseriInfoHandle();
+    console.log('user center:',this.userInfo, this.data.userInfo);
+    
   },
 
   onChange(e) {
@@ -168,7 +151,7 @@ Page({
 
 
 
-  fetUseriInfoHandle() {
+  fetUserInfoHandle() {
     fetchUserCenter().then(
       ({
         userInfo,
@@ -245,20 +228,20 @@ Page({
         });
         break;
       }
-      case 'point': {
-        Toast({
-          context: this,
-          selector: '#t-toast',
-          message: '你点击了积分菜单',
-          icon: '',
-          duration: 1000,
-        });
-        break;
-      }
-      case 'coupon': {
-        wx.navigateTo({ url: '/pages/coupon/coupon-list/index' });
-        break;
-      }
+      // case 'point': {
+      //   Toast({
+      //     context: this,
+      //     selector: '#t-toast',
+      //     message: '你点击了积分菜单',
+      //     icon: '',
+      //     duration: 1000,
+      //   });
+      //   break;
+      // }
+      // case 'coupon': {
+      //   wx.navigateTo({ url: '/pages/coupon/coupon-list/index' });
+      //   break;
+      // }
       default: {
         Toast({
           context: this,
@@ -335,7 +318,7 @@ Page({
     if (currAuthStep === 2) {
       wx.navigateTo({ url: '/pages/usercenter/person-info/index' });
     } else {
-      this.fetUseriInfoHandle();
+      this.fetUserInfoHandle();
     }
   },
 

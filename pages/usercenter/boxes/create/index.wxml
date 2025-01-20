@@ -1,6 +1,8 @@
-<view class="container">
+<view class="page">
+    <van-nav-bar title="设备新增" left-arrow class="custom-navbar" bind:click-left="onClickLeft" />
+    <view class="content">
         <!-- 标题 -->
-    <view class="title">新建设备</view>
+    <!-- <view class="title">新建设备</view> -->
     <!-- 手机号 -->
     <van-cell-group>
       <van-field
@@ -36,3 +38,5 @@
   <!-- 提交按钮 -->
   <button class="submit-btn" bindtap="onSubmit">提交</button>
 </view>
+</view>
+

@@ -1,4 +1,7 @@
-<view class="user-container">
+<view class="page">
+      <van-nav-bar title="商户管理" left-arrow class="custom-navbar" bind:click-left="onClickLeft" />
+
+      <view class="content">
     <view class="user-list">
         <block wx:for="{{userList || []}}" wx:key="index">
         <user-card userInfo="{{item}}"></user-card>
@@ -26,3 +29,4 @@
     </view>
   </view>
 </t-popup>
+</view>

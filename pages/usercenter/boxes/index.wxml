@@ -1,10 +1,13 @@
-<view class="box-container">
-    <view class="box-list">
-        <block wx:for="{{boxList}}" wx:key="index">
-        <box-card boxInfo="{{item}}" userList="{{userList}}"></box-card>
-        </block>
-    </view>
-    <view class="footer">
-    <t-fab icon="add" bind:click="onCreateBox" theme="success" aria-label="增加"></t-fab>
+<view class="page">
+    <van-nav-bar title="设备管理" left-arrow class="custom-navbar" bind:click-left="onClickLeft" />
+    <view class="content">
+        <view class="box-list">
+            <block wx:for="{{boxList}}" wx:key="index">
+            <box-card boxInfo="{{item}}" userList="{{userList}}"></box-card>
+            </block>
+        </view>
+        <view class="footer">
+        <t-fab icon="add" bind:click="onCreateBox" theme="success" aria-label="增加"></t-fab>
+        </view>
     </view>
 </view>

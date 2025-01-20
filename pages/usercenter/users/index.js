@@ -77,5 +77,9 @@ Page({
     wx.navigateTo({
       url: '/pages/usercenter/users/create/index',
   })
-  }
+  },
+  onClickLeft() {
+    // 返回上一页或自定义逻辑
+    wx.navigateBack();
+  },
 })

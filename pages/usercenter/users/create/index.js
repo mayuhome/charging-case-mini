@@ -110,7 +110,11 @@ Page({
       wx.showToast({ title: '用户创建成功', icon: 'success' });
       wx.navigateBack();
     });
-  }
+  },
+  onClickLeft() {
+    // 返回上一页或自定义逻辑
+    wx.navigateBack();
+  },
 
 
 

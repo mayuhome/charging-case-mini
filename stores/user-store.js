@@ -8,6 +8,8 @@ export const userStore = observable({
 
   // 定义修改状态的 Action
   updateUserInfo: action(function (info) {
+    console.log('info:', info);
+    
     this.userInfo = info;
     this.isAuthenticated = !!info; // 根据用户信息是否存在更新登录状态
   }),

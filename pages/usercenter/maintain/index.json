@@ -15,6 +15,7 @@
         "van-field": "@vant/weapp/field/index",
         "van-picker": "@vant/weapp/picker/index",
         "t-picker": "tdesign-miniprogram/picker/picker",
-        "t-picker-item": "tdesign-miniprogram/picker-item/picker-item"
+        "t-picker-item": "tdesign-miniprogram/picker-item/picker-item",
+        "van-nav-bar": "@vant/weapp/nav-bar/index"
   }
 }

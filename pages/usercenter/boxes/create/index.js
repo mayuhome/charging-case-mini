@@ -54,6 +54,12 @@ Page({
 
   },
 
+  onClickLeft() {
+    // 返回上一页或自定义逻辑
+    console.log('onClickLeft');
+    wx.navigateBack();
+  },
+
   /**
    * 页面上拉触底事件的处理函数
    */
