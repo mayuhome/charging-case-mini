@@ -38,8 +38,8 @@ const orderTagInfos = [
 ];
 
 const customerServiceInfo = {
-  servicePhone: '4006336868',
-  serviceTimeDuration: '每周三至周五 9:00-12:00  13:00-15:00',
+  servicePhone: '13012345678',
+  serviceTimeDuration: '每周三至周五 9:00-11:00  13:00-15:00',
 };
 
 export const genSimpleUserInfo = () => ({ ...userInfo });

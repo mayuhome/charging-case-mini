@@ -35,8 +35,8 @@
   </view>
   <view class="cell-box">
     <t-cell-group>
-      <t-cell title="设备编号" bordered="{{false}}" note="{{userInfo.code}}" />
-      <t-cell title="店铺名称" bordered="{{false}}" note="{{userInfo.address}}" />
+      <t-cell title="设备编号" bordered="{{false}}" note="{{userInfo.code || '暂无设备'}}" />
+      <t-cell title="店铺名称" bordered="{{false}}" note="{{userInfo.address || '待填写'}}" />
       <t-cell title="分成比例" bordered="{{false}}" note="1/3/5/10" />
     </t-cell-group>
   </view>
@@ -54,7 +54,6 @@
       服务时间: {{customerServiceInfo.serviceTimeDuration}}
     </view>
     <view class="popup-phone {{showKefu ? 'border-bottom-1px' : ''}}" bind:tap="call">电话客服</view>
-    <!-- <button class="popup-phone border-bottom-1px online" open-type="contact" wx:if="{{showKefu}}">在线客服</button> -->
     <view class="popup-close" bind:tap="closeMakePhone">取消</view>
   </view>
 </t-popup>
