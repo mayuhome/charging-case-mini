@@ -19,8 +19,7 @@
     "t-icon": "tdesign-miniprogram/icon/icon",
     "t-input": "tdesign-miniprogram/input/input",
     "t-button": "tdesign-miniprogram/button/button",
-    "t-toast": "tdesign-miniprogram/toast/toast",
-    "t-overlay": "tdesign-miniprogram/overlay/overlay"
+    "t-toast": "tdesign-miniprogram/toast/toast"
   },
   "window": {
     "backgroundTextStyle": "light",

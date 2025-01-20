@@ -1,5 +1,3 @@
-// utils/api.js
-import { get } from 'mobx-miniprogram';
 import { GET, POST } from './request';
 
 // 用户相关接口

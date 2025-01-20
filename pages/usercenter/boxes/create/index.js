@@ -1,6 +1,5 @@
 import { BoxAPI } from '../../../../utils/api';
 
-// pages/usercenter/boxes/create/index.js
 Page({
 
   /**
