@@ -87,11 +87,6 @@ const orderTagInfos = [
 
 const getDefaultData = () => ({
   showMakePhone: false,
-  // userInfo: {
-  //   avatarUrl: '',
-  //   nickName: '正在登录...',
-  //   phoneNumber: '',
-  // },
   menuData,
   orderTagInfos,
   customerServiceInfo: {},
@@ -228,20 +223,6 @@ Page({
         });
         break;
       }
-      // case 'point': {
-      //   Toast({
-      //     context: this,
-      //     selector: '#t-toast',
-      //     message: '你点击了积分菜单',
-      //     icon: '',
-      //     duration: 1000,
-      //   });
-      //   break;
-      // }
-      // case 'coupon': {
-      //   wx.navigateTo({ url: '/pages/coupon/coupon-list/index' });
-      //   break;
-      // }
       default: {
         Toast({
           context: this,
@@ -275,9 +256,7 @@ Page({
     })
   },
 
-  jumpToUsers(){
-    console.log('jumpToUsers');
-    
+  jumpToUsers(){    
     wx.navigateTo({
       url: '/pages/usercenter/users/index',
     })

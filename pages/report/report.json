@@ -5,7 +5,6 @@
     "van-search": "@vant/weapp/search/index",
     "t-tab-bar": "tdesign-miniprogram/tab-bar/tab-bar",
     "t-tab-bar-item": "tdesign-miniprogram/tab-bar-item/tab-bar-item",
-    "t-sticky": "tdesign-miniprogram/sticky/sticky",
     "van-nav-bar": "@vant/weapp/nav-bar/index"
   }
 }

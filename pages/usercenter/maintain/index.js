@@ -1,5 +1,5 @@
 import { BoxAPI, IncomeAPI } from '../../../utils/api';
-import { debounce } from '../../../utils/util';
+
 Page({
 
   /**
@@ -125,7 +125,6 @@ Page({
       boxVisible: true,
       pickerIndex: index,
     });
-    console.log('boxList', this.data.boxList);
   },
   handleAddBox() {
     const { formList } = this.data;
@@ -137,7 +136,6 @@ Page({
     this.setData({ formList });
   },
   onPickerCancel() {
-    console.log('onPickerCancel');
     this.setData({
       boxVisible: false,
     });

@@ -1,76 +1,40 @@
 <view class="page">
-        <van-nav-bar title="数据维护" left-arrow class="custom-navbar" bind:click-left="onClickLeft" />
-
-        <view class="content">
-    <view class="maintain-card">
-        <view class="field">
-            <t-cell title="选择日期" hover note="{{monthText}}" arrow data-mode="month" bindtap="showPicker" t-class="panel-item" />
-
-            <!-- 年月 -->
-            <t-date-time-picker
-            title="选择日期"
-            visible="{{monthVisible}}"
-            mode="month"
-            value="{{month}}"
-            format="YYYY-MM"
-            bindchange="onConfirm"
-            bindpick="onColumnChange"
-            bindcancel="hidePicker"
-            start="{{start}}"
-            end="{{end}}"
-            />
-        </view>   
-    <view class="field">
-        <t-radio-group t-class="horizontal-box" value="{{inputType}}" bind:change="onInputTypeChange">
-            <view wx:for="{{['上传文件', '手动输入']}}" wx:key="index" class="card {{inputType == item ? 'card--active' : ''}}">
-                <t-icon wx:if="{{inputType == item}}" name="check" t-class="card__icon" />
-                <t-radio value="{{item}}" label="{{item}}" icon="none" />
+    <van-nav-bar title="数据维护" left-arrow class="custom-navbar" bind:click-left="onClickLeft" />
+    <view class="content">
+        <view class="maintain-card">
+            <view class="field">
+                <t-cell title="选择日期" hover note="{{monthText}}" arrow data-mode="month" bindtap="showPicker" t-class="panel-item" />
+                <!-- 年月 -->
+                <t-date-time-picker title="选择日期" visible="{{monthVisible}}" mode="month" value="{{month}}" format="YYYY-MM" bindchange="onConfirm" bindpick="onColumnChange" bindcancel="hidePicker" start="{{start}}" end="{{end}}" />
             </view>
-        </t-radio-group>
-    </view>
-    <view wx:if="{{inputType === '上传文件'}}" class="field">
-        <!-- <t-cell title="选择文件" hover note="{{fileText}}" arrow bindtap="onChooseFile" t-class="panel-item" /> -->
-        <van-uploader class="upload" accept="file">
-             <van-button icon="plus" type="primary" class="upload-btn">上传文件</van-button>
-        </van-uploader>
-    </view>
-    <view wx:else class="field">
-        <view style="margin: auto 24px">
-            <van-button type="primary" icon="plus" block bind:click="handleAddBox">新增设备</van-button>
-        </view>
-          
-        <view wx:for="{{formList}}" wx:key="index" class="form-box">
-            <!-- <t-cell class="mb-16" size="small" title="选择设备" arrow hover note="{{boxText}}" bind:click="onBoxPicker" /> -->
-            <van-cell title="选择设备" is-link value="{{item.code}}" data-index="{{index}}" bind:click="onBoxPicker"/>
-            <!-- <van-picker wx:if="{{boxVisible}}" columns="{{ boxList }}" value-key="code" bind:change="onChange" /> -->
-
-
-                <!-- <t-input size="small" label="数值" placeholder="请输入当月数值" align="right" type="number" bindinput="onInputChange" data-index="{{index}}" value="{{item.value}}"/> -->
-                  <van-field
-                    label="数值"
-                    placeholder="请输入当月数值"
-                    border="{{ false }}"
-                    input-align="right"
-                    type="{{'digit'}}" bindinput="onInputChange" data-index="{{index}}" value="{{item.amount}}"
-                />
+            <view class="field">
+                <t-radio-group t-class="horizontal-box" value="{{inputType}}" bind:change="onInputTypeChange">
+                    <view wx:for="{{['上传文件', '手动输入']}}" wx:key="index" class="card {{inputType == item ? 'card--active' : ''}}">
+                        <t-icon wx:if="{{inputType == item}}" name="check" t-class="card__icon" />
+                        <t-radio value="{{item}}" label="{{item}}" icon="none" />
+                    </view>
+                </t-radio-group>
+            </view>
+            <view wx:if="{{inputType === '上传文件'}}" class="field">
+                <van-uploader class="upload" accept="file">
+                    <van-button icon="plus" type="primary" class="upload-btn">上传文件</van-button>
+                </van-uploader>
+            </view>
+            <view wx:else class="field">
+                <view style="margin: auto 24px">
+                    <van-button type="primary" icon="plus" block bind:click="handleAddBox">
+                        新增设备
+                    </van-button>
+                </view>
+                <view wx:for="{{formList}}" wx:key="index" class="form-box">
+                    <van-cell title="选择设备" is-link value="{{item.code}}" data-index="{{index}}" bind:click="onBoxPicker" />
+                    <van-field label="数值" placeholder="请输入当月数值" border="{{ false }}" input-align="right" type="{{'digit'}}" bindinput="onInputChange" data-index="{{index}}" value="{{item.amount}}" />
+                </view>
+            </view>
+            <button class="submit-btn" bindtap="onSubmit">提交</button>
         </view>
     </view>
-      
-        <button class="submit-btn" bindtap="onSubmit">提交</button>
-    </view>
-</view>
-            <t-picker
-                visible="{{boxVisible}}"
-                title="选择设备"
-                cancelBtn="取消"
-                confirmBtn="确认"
-                data-index="{{pickerIndex}}"
-                bindchange="onPickerChange"
-                bindpick="onColumnChange"
-                bindcancel="onPickerCancel"
-                bindconfirm="onPickerConfirm"
-                >
-                <t-picker-item options="{{boxList}}">
-                </t-picker-item>
-            </t-picker>
+    <t-picker visible="{{boxVisible}}" title="选择设备" cancelBtn="取消" confirmBtn="确认" data-index="{{pickerIndex}}" bindchange="onPickerChange" bindpick="onColumnChange" bindcancel="onPickerCancel" bindconfirm="onPickerConfirm">
+        <t-picker-item options="{{boxList}}"></t-picker-item>
+    </t-picker>
 </view>
