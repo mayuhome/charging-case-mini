@@ -17,6 +17,7 @@
   overflow: auto;
   padding: 40rpx;
   background-color: #fff;
+  -webkit-overflow-scrolling: touch;
 }
 
 .header {
