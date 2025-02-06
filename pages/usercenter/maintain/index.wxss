@@ -42,61 +42,11 @@
   }
   .field{
     /* background-color: #f5f5f5; */
-    /* width: 100%; */
-    /* display: flex; */
-    /* flex-direction: row nowrap; */
-  }
-  /* t-radio-group{
-    flex: 1;
-  } */
-  .card {
-    /* position: relative; */
-    /* margin: 32rpx; */
-    border-radius: 12rpx;
-    overflow: hidden;
-    box-sizing: border-box;
-    border: 3rpx solid var(--td-bg-color-container, #d3d3d3);
-  }
-  
-  .card--active {
-    border-color: var(--td-brand-color, #14B8A6);
-  }
-  
-  .card--active::after {
-    content: '';
-    display: block;
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 0;
-    border-width: 28px 28px 28px 0;
-    border-style: solid;
-    border-color: var(--td-brand-color, #14B8A6) transparent transparent transparent;
-  }
-  
-  .card__icon {
-    color: var(--td-bg-color-container, #fff);
-    position: absolute;
-    left: 1.5px;
-    top: 1.5px;
-    z-index: 1;
-  }
-  
-  /* 横向布局 */
-  .horizontal-box {
+    width: 100%;
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    flex-wrap: no-wrap;
-    flex: 1;
-    margin: 32rpx auto;
+    flex-direction: row nowrap;
   }
   
-  .horizontal-box .card {
-    flex: 1;
-    margin: 12rpx;
-  }
   .upload-btn{
     display: block;
     
@@ -120,4 +70,30 @@
     padding: 12px 24px;
     border-radius: 6px;
     margin-top: 12px;
+  }
+
+  .test-field{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .test-card{
+    width: 100%;
+    /* background-color: #F9FAFB; */
+    padding: 32rpx 24rpx;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    margin: 24rpx;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 32rpx;
+  }
+
+  .test-card--active{
+    /* border-color: #ccc; */
+    background-color: #14B8A6;
+    color: #fff;
   }

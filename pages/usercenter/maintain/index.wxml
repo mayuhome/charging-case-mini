@@ -7,13 +7,8 @@
                 <!-- 年月 -->
                 <t-date-time-picker title="选择日期" visible="{{monthVisible}}" mode="month" value="{{month}}" format="YYYY-MM" bindchange="onConfirm" bindpick="onColumnChange" bindcancel="hidePicker" start="{{start}}" end="{{end}}" />
             </view>
-            <view class="field">
-                <t-radio-group t-class="horizontal-box" value="{{inputType}}" bind:change="onInputTypeChange">
-                    <view wx:for="{{['上传文件', '手动输入']}}" wx:key="index" class="card {{inputType == item ? 'card--active' : ''}}">
-                        <t-icon wx:if="{{inputType == item}}" name="check" t-class="card__icon" />
-                        <t-radio value="{{item}}" label="{{item}}" icon="none" />
-                    </view>
-                </t-radio-group>
+            <view class="test-field">
+            <view wx:for="{{['上传文件', '手动输入']}}" wx:key="index" class="test-card {{inputType === item ? 'test-card--active' : ''}}" bind:tap="onInputTypeChange" data-value="{{item}}">{{item}}</view>
             </view>
             <view wx:if="{{inputType === '上传文件'}}" class="field">
                 <van-uploader class="upload" accept="file">

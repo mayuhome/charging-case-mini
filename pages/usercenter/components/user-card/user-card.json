@@ -3,7 +3,6 @@
   "usingComponents": {
     "t-popup": "tdesign-miniprogram/popup/popup",
     "t-button": "tdesign-miniprogram/button/button",
-    "t-input": "tdesign-miniprogram/input/input",
     "van-field": "@vant/weapp/field/index",
     "van-switch": "@vant/weapp/switch/index",
     "van-cell": "@vant/weapp/cell/index",

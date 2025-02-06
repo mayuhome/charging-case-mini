@@ -1,9 +1,7 @@
 {
   "navigationBarTitleText": "创建设备",
   "usingComponents": {
-    "t-input": "tdesign-miniprogram/input/input",
     "van-field": "@vant/weapp/field/index",
-    "van-cell": "@vant/weapp/cell/index",
     "van-cell-group": "@vant/weapp/cell-group/index",
     "van-nav-bar": "@vant/weapp/nav-bar/index"
   }

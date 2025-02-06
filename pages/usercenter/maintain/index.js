@@ -20,6 +20,10 @@ Page({
     boxVisible: false,
     formList: [],
     pickerIndex: -1,
+    options: [
+      { label: '上传文件', value: 'upload', checked: false },
+      { label: '手动输入', value: 'manual', checked: false }
+    ]
   },
 
   /**
@@ -116,7 +120,8 @@ Page({
     this.setData({ value: e.detail.value });
   },
   onInputTypeChange(e) {
-    this.setData({ inputType: e.detail.value });
+    console.log('onInputTypeChange:', e);
+    this.setData({ inputType: e.target.dataset.value });
   },
   onBoxPicker(e) {
     console.log('onBoxPicker:',e);
@@ -203,4 +208,15 @@ Page({
     // 返回上一页或自定义逻辑
     wx.navigateBack();
   },
+
+  radioChange: function (e) {
+    console.log('radioChange:', e);
+    
+    const value = e.detail.value;
+    const options = this.data.options.map(option => {
+      option.checked = option.value === value;
+      return option;
+    });
+    this.setData({ options });
+  }
 })
