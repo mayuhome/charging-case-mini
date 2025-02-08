@@ -10,23 +10,27 @@
             <view class="test-field">
             <view wx:for="{{['上传文件', '手动输入']}}" wx:key="index" class="test-card {{inputType === item ? 'test-card--active' : ''}}" bind:tap="onInputTypeChange" data-value="{{item}}">{{item}}</view>
             </view>
-            <view wx:if="{{inputType === '上传文件'}}" class="field">
-                <van-uploader class="upload" accept="file">
+            <view class="btn">
+                    <van-uploader style="margin: auto 24px" wx:if="{{inputType === '上传文件'}}" accept="file">
                     <van-button icon="plus" type="primary" class="upload-btn">上传文件</van-button>
                 </van-uploader>
-            </view>
-            <view wx:else class="field">
-                <view style="margin: auto 24px">
+                <view wx:else style="margin: auto 24px">
                     <van-button type="primary" icon="plus" block bind:click="handleAddBox">
                         新增设备
                     </van-button>
                 </view>
-                <view wx:for="{{formList}}" wx:key="index" class="form-box">
+            </view>
+            <view wx:if="{{inputType === '手动输入'}}">
+                                <view wx:for="{{formList}}" wx:key="index" class="form-box">
                     <van-cell title="选择设备" is-link value="{{item.code}}" data-index="{{index}}" bind:click="onBoxPicker" />
                     <van-field label="数值" placeholder="请输入当月数值" border="{{ false }}" input-align="right" type="{{'digit'}}" bindinput="onInputChange" data-index="{{index}}" value="{{item.amount}}" />
                 </view>
             </view>
-            <button class="submit-btn" bindtap="onSubmit">提交</button>
+            <view class="submit-btn">
+                <van-button  type="primary" bindtap="onSubmit" block>提交</van-button>
+            </view>
+              
+
         </view>
     </view>
     <t-picker visible="{{boxVisible}}" title="选择设备" cancelBtn="取消" confirmBtn="确认" data-index="{{pickerIndex}}" bindchange="onPickerChange" bindpick="onColumnChange" bindcancel="onPickerCancel" bindconfirm="onPickerConfirm">
