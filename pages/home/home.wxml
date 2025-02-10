@@ -1,64 +1,54 @@
 <view class="page">
-    <!-- 自定义导航栏 -->
-      <van-nav-bar
-  title="首页"
-  left-arrow
-  class="custom-navbar"
-  bind:click-left="onClickLeft"
-/>
+  <!-- 自定义导航栏 -->
+  <van-nav-bar title="首页" class="custom-navbar"/>
   <view class="content">
-
-<view class="header">
-    <text class="title">欢迎使用共享充电宝</text>
-    <text class="subtitle">随时随地，为您的设备充电</text>
-    <image src="/assets/充电设施.png" class="banner" mode="aspectFill" />
-  </view>
-
-  <view class="section">
-    <text class="section-title">主要功能</text>
-    <view class="features">
-      <view class="feature-item">
-        <t-icon name="{{'/assets/快速充电.png'}}" size="60" />
-        <text>快速充电</text>
+    <view class="header">
+      <text class="title">欢迎使用共享充电宝</text>
+      <text class="subtitle">随时随地，为您的设备充电</text>
+      <image src="/assets/充电设施.png" class="banner" mode="aspectFill" />
+    </view>
+    <view class="section">
+      <text class="section-title">主要功能</text>
+      <view class="features">
+        <view class="feature-item">
+          <t-icon name="{{'/assets/快速充电.png'}}" size="60" />
+          <text>快速充电</text>
+        </view>
+        <view class="feature-item">
+          <t-icon name="{{'/assets/就近租借.png'}}" size="60" />
+          <text>就近租借</text>
+        </view>
+        <view class="feature-item">
+          <t-icon name="{{'/assets/安全支付.png'}}" size="60" />
+          <text>安全支付</text>
+        </view>
+        <view class="feature-item">
+          <t-icon name="{{'/assets/全天服务.png'}}" size="60" />
+          <text>全天服务</text>
+        </view>
       </view>
-      <view class="feature-item">
-        <t-icon name="{{'/assets/就近租借.png'}}" size="60" />
-        <text>就近租借</text>
-      </view>
-      <view class="feature-item">
-        <t-icon name="{{'/assets/安全支付.png'}}" size="60" />
-        <text>安全支付</text>
-      </view>
-      <view class="feature-item">
-        <t-icon name="{{'/assets/全天服务.png'}}" size="60" />
-        <text>全天服务</text>
+    </view>
+    <view class="section">
+      <text class="section-title">产品特点</text>
+      <view class="feature-list">
+        <view class="feature-card">
+          <text class="feature-title">大容量电池</text>
+          <text class="feature-desc">10000mAh 大容量，满足您一天的充电需求</text>
+        </view>
+        <view class="feature-card">
+          <text class="feature-title">多口输出</text>
+          <text class="feature-desc">支持 Type-C、Lightning、Micro USB 多种接口</text>
+        </view>
+        <view class="feature-card">
+          <text class="feature-title">智能保护</text>
+          <text class="feature-desc">多重安全保护，充电更安心</text>
+        </view>
       </view>
     </view>
   </view>
-
-  <view class="section">
-    <text class="section-title">产品特点</text>
-    <view class="feature-list">
-      <view class="feature-card">
-        <text class="feature-title">大容量电池</text>
-        <text class="feature-desc">10000mAh 大容量，满足您一天的充电需求</text>
-      </view>
-      <view class="feature-card">
-        <text class="feature-title">多口输出</text>
-        <text class="feature-desc">支持 Type-C、Lightning、Micro USB 多种接口</text>
-      </view>
-      <view class="feature-card">
-        <text class="feature-title">智能保护</text>
-        <text class="feature-desc">多重安全保护，充电更安心</text>
-      </view>
-    </view>
-  </view>
-  </view>
-  
-  <t-tab-bar t-class="t-tab-bar" value="{{tabName}}" bindchange="onChange" theme="tag" split="{{false}}">
-  <t-tab-bar-item wx:for="{{tabList}}" wx:key="value" value="{{item.value}}" icon="{{item.icon}}">
-    {{item.label}}
-  </t-tab-bar-item>
-</t-tab-bar>
+  <t-tab-bar class="t-tab-bar" t-class="t-tab-bar" value="{{tabName}}" bindchange="onChange" theme="tag" split="{{false}}">
+    <t-tab-bar-item wx:for="{{tabList}}" wx:key="value" value="{{item.value}}" icon="{{item.icon}}">
+      {{item.label}}
+    </t-tab-bar-item>
+  </t-tab-bar>
 </view>
-

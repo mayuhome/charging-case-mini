@@ -16,10 +16,9 @@
   flex-direction: column;
   justify-content: start;
   overflow: auto;
-  margin: 100px 16px 16px 16px;
   /* margin-bottom: 40px; */
   background: #F7FAFA;
-  padding: 20px 0;
+  padding: 16rpx 32rpx;
 }
 
 .maintain-container {
@@ -87,7 +86,7 @@
 
   .test-card{
     width: 100%;
-    /* background-color: #F9FAFB; */
+    background-color: #F9FAFB;
     padding: 32rpx 24rpx;
     border: 1px solid #ccc;
     border-radius: 6px;
@@ -100,9 +99,9 @@
   }
 
   .test-card--active{
-    /* border-color: #ccc; */
-    background-color: #14B8A6;
-    color: #fff;
+    border-color: #1989fa;
+    /* background-color: #1989fa; */
+    color: #1989fa;
   }
 
   .submit-btn{

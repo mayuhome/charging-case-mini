@@ -11,49 +11,55 @@
   z-index: 10;
 }
 .content{
+  position: relative;
   flex: 1;
-  /* margin-top: 80px; */
-  margin-bottom: 40px;
   overflow: auto;
-  padding: 40rpx;
-  background-color: #fff;
+  /* margin: 12rpx 0; */
+  padding: 16rpx;
   -webkit-overflow-scrolling: touch;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 40px;
 }
 
 .header {
   text-align: center;
-  margin-bottom: 40rpx;
+  margin: 0 16rpx;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  width: 100%;
-  /* padding: 20px; */
+  /* width: 100%; */
+  background-color: #fff;
+  padding: 16rpx 32rpx;
+  border-radius: 6px;
 }
 
 .header .title {
-  font-size: 48rpx;
+  font-size: 40rpx;
   font-weight: bold;
-  line-height: 100rpx;
+  line-height: 80rpx;
 }
 
 .header .subtitle {
   font-size: 28rpx;
   color: #666;
-  margin-bottom: 50rpx;
+  line-height: 56rpx;
 }
 
 .banner {
-  width: 100%;
-  /* margin: 3% auto; */
-  height: 400rpx;
   border-radius: 16px;
-  margin-bottom: 80rpx;
+  margin: 12rpx auto;
 }
 
 .section {
-  margin-bottom: 80rpx;
-  width: 100%;
+  /* margin-bottom: 80rpx; */
+  background-color: #fff;
+  margin: 0 16rpx;
+  padding: 16rpx 32rpx;
+  border-radius: 6px;
+  width: -webkit-fill-available;
   display: flex;
   flex-direction: column;
 }
@@ -61,13 +67,14 @@
 .section-title {
   font-size: 40rpx;
   font-weight: bold;
-  margin-bottom: 40rpx;
+  line-height: 80rpx;
+  /* margin-bottom: 40rpx; */
 }
 
 .features {
   display: flex;
   justify-content: space-between;
-  padding: 0 20rpx;
+  padding: 0 16rpx;
 }
 
 .feature-item {
@@ -81,12 +88,12 @@
 .feature-list {
   display: flex;
   flex-direction: column;
-  gap: 20rpx;
+  gap: 16rpx;
 }
 
 .feature-card {
   background-color: #fff;
-  padding: 40rpx;
+  padding: 32rpx;
   border-radius: 10rpx;
   box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.1);
   margin-bottom: 30rpx;
@@ -97,6 +104,7 @@
 .feature-title {
   font-size: 28rpx;
   font-weight: bold;
+  line-height: 56rpx;
 }
 
 .feature-desc {
@@ -105,7 +113,7 @@
   margin-top: 10rpx;
 }
 .t-tab-bar{
-  position: fixed;
+  position: relative;
   bottom: 0;
   width: 100%;
 }
