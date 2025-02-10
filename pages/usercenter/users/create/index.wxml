@@ -1,60 +1,17 @@
 <view class="page">
-      <van-nav-bar title="商户创建" left-arrow class="custom-navbar" bind:click-left="onClickLeft" />
-
-      <view class="content">
-        <!-- 标题 -->
-    <!-- <view class="title">新建用户</view> -->
-    <!-- 手机号 -->
+  <van-nav-bar title="商户创建" left-arrow class="custom-navbar" bind:click-left="onClickLeft" />
+  <view class="content">
     <van-cell-group>
-      <van-field
-    value="{{ phone }}"
-    label="手机号"
-    required
-    bind:input="onInput"
-    data-field="phone"
-    placeholder="请输入手机号"
-    size="large"
-  />
-
-  <van-field
-    value="{{ password }}"
-    bind:input="onInput"
-    type="password"
-    label="密码"
-    placeholder="请输入密码"
-    data-field="password"
-    required
-    size="large"
-  />
-
-    <van-field
-    value="{{ confirmPassword }}"
-    bind:input="onConfirmPasswordInput"
-    type="password"
-    label="确认密码"
-    placeholder="请确认密码"
-    data-field="confirmPassword"
-    required
-    size="large"
-    error-message="{{confirmPasswordErrorMsg}}"
-  />
-
+      <van-field value="{{ phone }}" label="手机号" required bind:input="onInput" data-field="phone" placeholder="请输入手机号" />
+      <van-field value="{{ password }}" bind:input="onInput" type="password" label="密码" placeholder="请输入密码" data-field="password" required />
+      <van-field value="{{ confirmPassword }}" bind:input="onConfirmPasswordInput" type="password" label="确认密码" placeholder="请确认密码" data-field="confirmPassword" required error-message="{{confirmPasswordErrorMsg}}" />
       <!-- 姓名 -->
-      <van-field
-    value="{{ name }}"
-    data-field="name"
-    bind:input="onInput"
-    label="用户名"
-    placeholder="请输入用户名"
-    size="large"
-  />
-
-
-  <van-cell class="active-cell" title="激活" size="large"><van-switch  checked="{{isActive}}" data-field="isActive" size="large" bind:change="onInput" size="20px" active-color="#07c160"/></van-cell>
-</van-cell-group>
-
-  <!-- 提交按钮 -->
-  <button class="submit-btn" bindtap="onSubmit" disabled="{{confirmPasswordErrorMsg}}">提交</button>
-</view>
-
+      <van-field value="{{ name }}" data-field="name" bind:input="onInput" label="用户名" placeholder="请输入用户名" />
+      <van-cell class="active-cell" title="激活">
+        <van-switch checked="{{isActive}}" data-field="isActive" bind:change="onInput" size="20px" active-color="#07c160" />
+      </van-cell>
+    </van-cell-group>
+    <!-- 提交按钮 -->
+    <button class="submit-btn" bindtap="onSubmit" disabled="{{confirmPasswordErrorMsg}}">提交</button>
+  </view>
 </view>

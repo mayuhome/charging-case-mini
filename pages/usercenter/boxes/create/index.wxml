@@ -1,39 +1,12 @@
 <view class="page">
-    <van-nav-bar title="设备新增" left-arrow class="custom-navbar" bind:click-left="onClickLeft" />
-    <view class="content">
-        <!-- 标题 -->
-    <!-- <view class="title">新建设备</view> -->
-    <!-- 手机号 -->
+  <van-nav-bar title="设备新增" left-arrow class="custom-navbar" bind:click-left="onClickLeft" />
+  <view class="content">
     <van-cell-group>
-      <van-field
-    value="{{ code }}"
-    label="设备编号"
-    required
-    bind:input="onInput"
-    data-field="code"
-    placeholder="请输入设备编号"
-  />
-
-  <van-field
-    value="{{ address }}"
-    bind:input="onInput"
-    type="text"
-    label="地址"
-    placeholder="请输入地址"
-    data-field="address"
-  />
-      <!-- 姓名 -->
-      <van-field
-    value="{{ profitShare }}"
-    data-field="profitShare"
-    bind:input="onInput"
-    label="分成比例"
-    placeholder="请输入分成比例"
-  />
-</van-cell-group>
-
-  <!-- 提交按钮 -->
-  <button class="submit-btn" bindtap="onSubmit">提交</button>
+      <van-field value="{{ code }}" label="设备编号" required bind:input="onInput" data-field="code" placeholder="请输入设备编号" />
+      <van-field value="{{ address }}" bind:input="onInput" type="text" label="地址" placeholder="请输入地址" data-field="address" />
+      <van-field value="{{ profitShare }}" data-field="profitShare" bind:input="onInput" label="分成比例" placeholder="请输入分成比例" />
+    </van-cell-group>
+    <!-- 提交按钮 -->
+    <button class="submit-btn" bindtap="onSubmit">提交</button>
+  </view>
 </view>
-</view>
-

@@ -16,10 +16,9 @@
     flex-direction: column;
     justify-content: start;
     overflow: auto;
-    margin: 100px 16px 16px 16px;
     /* margin-bottom: 40px; */
     background: #F7FAFA;
-    padding: 20px 0;
+    padding: 32rpx;
 }
 .user-container{
     padding: 16px;
