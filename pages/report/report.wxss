@@ -19,7 +19,7 @@
     overflow: auto;
     /* margin-top: 80px; */
     margin-bottom: 40px;
-    padding: 20rpx 0;
+    /* padding: 20rpx 0; */
 }
 .t-tab-bar{
     position: relative;
@@ -32,7 +32,7 @@
     border-radius: 12px;
     height: 120px;
     /* display: block; */
-    margin: 0px 18px;
+    margin: 32rpx;
     padding: 20px 12px;
     color: #fff;
     display: flex;
@@ -64,11 +64,11 @@
 }
 
 .incomes{
-    background-color: #fff;
+    /* background-color: #fff; */
     border-radius: 12px;
-    margin: 12px 18px;
+    /* margin: 32rpx; */
     margin-bottom: 48px;
-    padding: 12px;
+    padding: 32rpx;
     display: flex;
     flex-direction: column;
     /* gap: 8px; */
@@ -77,10 +77,14 @@
 }
 .income{
     /* height: 40px; */
+    background-color: #fff;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 16px 0;
+    /* margin: 0 32rpx; */
+    padding: 32rpx;
+    margin: 4rpx 0;
+    border-radius: 0 0 24rpx 24rpx;
     border-bottom: rgba(0, 0, 0, 0.05) 1px solid;
 }
 .income .date{

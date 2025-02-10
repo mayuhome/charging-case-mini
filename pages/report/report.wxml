@@ -1,6 +1,6 @@
 <view class="page">
   <!-- 自定义导航栏 -->
-  <van-nav-bar title="收益明细" left-arrow class="custom-navbar" bind:click-left="onClickLeft" />
+  <van-nav-bar title="收益明细" class="custom-navbar" />
   <view class="content">
     <view class="header">
       <view class="amount-content">
