@@ -16,10 +16,9 @@
     flex-direction: column;
     justify-content: start;
     overflow: auto;
-    margin: 100px 16px 16px 16px;
-    /* margin-bottom: 40px; */
+    /* margin: auto 16px; */
     background: #F7FAFA;
-    padding: 20px 0;
+    padding: 16px;
 }
 .box-container{
     padding: 16px;

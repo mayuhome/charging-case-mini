@@ -12,7 +12,6 @@
     bind:input="onInput"
     data-field="code"
     placeholder="请输入设备编号"
-    size="large"
   />
 
   <van-field
@@ -22,7 +21,6 @@
     label="地址"
     placeholder="请输入地址"
     data-field="address"
-    size="large"
   />
       <!-- 姓名 -->
       <van-field
@@ -31,7 +29,6 @@
     bind:input="onInput"
     label="分成比例"
     placeholder="请输入分成比例"
-    size="large"
   />
 </van-cell-group>
 
