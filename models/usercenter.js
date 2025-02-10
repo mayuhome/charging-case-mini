@@ -7,24 +7,6 @@ const userInfo = {
 };
 const countsData = [];
 
-const orderTagInfos = [
-  {
-    orderNum: 1,
-    tabType: 5,
-  },
-  {
-    orderNum: 1,
-    tabType: 10,
-  },
-  {
-    orderNum: 1,
-    tabType: 40,
-  },
-  {
-    orderNum: 0,
-    tabType: 0,
-  },
-];
 
 const customerServiceInfo = {
   servicePhone: '13012345678',
@@ -36,6 +18,5 @@ export const genSimpleUserInfo = () => ({ ...userInfo });
 export const genUsercenter = () => ({
   userInfo,
   countsData,
-  orderTagInfos,
   customerServiceInfo,
 });

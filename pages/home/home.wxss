@@ -5,14 +5,14 @@
   background: #F7FAFA;
 }
 .custom-navbar {
-  position: fixed;
+  position: relative;
   top: 0;
   width: 100%;
   z-index: 10;
 }
 .content{
   flex: 1;
-  margin-top: 80px;
+  /* margin-top: 80px; */
   margin-bottom: 40px;
   overflow: auto;
   padding: 40rpx;

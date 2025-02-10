@@ -1,24 +1,66 @@
-Component({
-  externalClasses: ['title-class', 'icon-class', 'number-class'],
-  options: {
-    multipleSlots: true,
+// pages/usercenter/components/order-group/index.js
+Page({
+
+  /**
+   * 页面的初始数据
+   */
+  data: {
+
   },
-  properties: {
-    orderTagInfos: {
-      type: Array,
-      value: [],
-    },
-    title: {
-      type: String,
-      value: '我的钱包',
-    },
-    isTop: {
-      type: Boolean,
-      value: true,
-    },
-    classPrefix: {
-      type: String,
-      value: 'wr',
-    },
+
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad(options) {
+
   },
-});
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady() {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow() {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide() {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload() {
+
+  },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh() {
+
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom() {
+
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage() {
+
+  }
+})

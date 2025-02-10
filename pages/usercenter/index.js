@@ -68,27 +68,9 @@ const menuData = [
   ],
 ];
 
-const orderTagInfos = [
-  {
-    title: '待提款',
-    iconName: 'wallet',
-    orderNum: 0,
-    tabType: 5,
-    status: 1,
-  },
-  {
-    title: '已收款',
-    iconName: 'exchange',
-    orderNum: 0,
-    tabType: 10,
-    status: 1,
-  },
-];
-
 const getDefaultData = () => ({
   showMakePhone: false,
   menuData,
-  orderTagInfos,
   customerServiceInfo: {},
   currAuthStep: 1,
   showKefu: true,
@@ -151,7 +133,6 @@ Page({
       ({
         userInfo,
         countsData,
-        orderTagInfos: orderInfo,
         customerServiceInfo,
       }) => {
         console.log("user");
@@ -165,15 +146,10 @@ Page({
             }
           });
         });
-        const info = orderTagInfos.map((v, index) => ({
-          ...v,
-          ...orderInfo[index],
-        }));
         console.log('userinfo:', userInfo);
         this.setData({
           userInfo,
           menuData,
-          orderTagInfos: info,
           customerServiceInfo,
           currAuthStep: 2,
         });
@@ -292,15 +268,6 @@ Page({
     });
   },
 
-  gotoUserEditPage() {
-    const { currAuthStep } = this.data;
-    if (currAuthStep === 2) {
-      wx.navigateTo({ url: '/pages/usercenter/person-info/index' });
-    } else {
-      this.fetUserInfoHandle();
-    }
-  },
-
   getVersionInfo() {
     const versionInfo = wx.getAccountInfoSync();
     const { version, envVersion = __wxConfig } = versionInfo.miniProgram;
@@ -308,4 +275,11 @@ Page({
       versionNo: envVersion === 'release' ? version : envVersion,
     });
   },
+
+  goLogin(){
+    wx.clearStorage();
+    wx.navigateTo({
+      url: '/pages/login/login'
+    });
+  }
 });
