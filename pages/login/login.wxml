@@ -1,4 +1,6 @@
-<view class="main" style="background-size: cover; background-image: url(../../assets/IMG@1x.png);">
+<view class="main">
+  <image class="background-image" src="/assets/IMG@1x.png" mode="widthFix" lazy-load="false" binderror="" bindload="" />
+    
   <!-- <view> -->
     <text class="title">后台管理系统</text>
   <!-- </view> -->
