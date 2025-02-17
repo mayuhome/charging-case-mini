@@ -78,7 +78,7 @@ const getDefaultData = () => ({
   tabName: '/pages/usercenter/index',
   tabList: [
     { value: '/pages/home/home', label: '首页', icon: 'home' },
-    { value: '/pages/report/report', label: '应用', icon: 'app' },
+    { value: '/pages/report/report', label: '数据', icon: 'app' },
     { value: '/pages/usercenter/index', label: '我的', icon: 'user' },
   ],
 });

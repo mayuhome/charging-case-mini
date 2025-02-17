@@ -7,11 +7,11 @@
   <view class="content">
   <view class="field">
     <label for="phone">手机号</label>
-    <input type="number" maxlength="11" bindinput="onPhoneInput" placeholder="请输入手机号" value="{{phone}}"/>
+    <input type="number" maxlength="11" adjust-position="true" bindinput="onPhoneInput" placeholder="请输入手机号" value="{{phone}}"/>
   </view>
   <view class="field">
     <label for="phone">密码</label>
-    <input type="text" password placeholder="请输入密码" bindinput="onPasswordInput" value="{{password}}"/>
+    <input type="text" password placeholder="请输入密码" adjust-position="true" bindinput="onPasswordInput" value="{{password}}"/>
   </view>
     <button class="btn" bind:tap="onLogin">
     登录

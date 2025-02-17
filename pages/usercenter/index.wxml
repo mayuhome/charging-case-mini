@@ -1,6 +1,6 @@
 <view class="page">
   <!-- 自定义导航栏 -->
-  <van-nav-bar title="个人中心" left-arrow class="custom-navbar" bind:click-left="onClickLeft" />
+  <van-nav-bar title="个人中心" class="custom-navbar" bind:click-left="onClickLeft" />
   <view class="content" wx:if="{{userInfo}}">
     <view class="cell-box">
       <t-cell-group>
