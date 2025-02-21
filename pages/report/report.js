@@ -5,7 +5,7 @@ Page({
     incomes: [],
     filterIncomes: [],
     totalAmount: 0,
-    currentAmount: 0,
+    // currentAmount: 0,
     tabName: '/pages/report/report',
     tabList: [
       { value: '/pages/home/home', label: '首页', icon: 'home' },
@@ -17,12 +17,12 @@ Page({
   onLoad() {
     IncomeAPI.getIncomeList().then(res => {
       const totalAmount = res.map(m => m.amount).reduce((total, item) => parseFloat(item) + parseFloat(total), 0);
-      const currentAmount = res.map(m => m.currentAmount).reduce((total, item) => parseFloat(item) + parseFloat(total), 0);      
+      // const currentAmount = res.map(m => m.currentAmount).reduce((total, item) => parseFloat(item) + parseFloat(total), 0);      
       this.setData({
         incomes: [...res],
         filterIncomes: [...res],
         totalAmount: totalAmount.toFixed(2),
-        currentAmount: currentAmount.toFixed(2)
+        // currentAmount: currentAmount.toFixed(2)
       })
     })
   },

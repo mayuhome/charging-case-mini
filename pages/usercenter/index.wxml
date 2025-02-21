@@ -5,6 +5,8 @@
     <view class="cell-box">
       <t-cell-group>
         <t-cell title="账号" bordered="{{false}}" note="{{userInfo.phone}}" />
+        <t-cell title="姓名" bordered="{{false}}" note="{{userInfo.name}}" />
+        <t-cell title="角色" bordered="{{false}}" size="small" note="{{userInfo.role}}" />
       </t-cell-group>
     </view>
     <view class="cell-box">
