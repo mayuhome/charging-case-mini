@@ -3,9 +3,14 @@
 
       <view class="content">
     <view class="user-list">
-        <block wx:for="{{userList || []}}" wx:key="index">
-        <user-card userInfo="{{item}}"></user-card>
+      <template wx:if="{{userList.length > 0}}">
+        <block wx:for="{{userList}}" wx:key="index">
+          <user-card userInfo="{{item}}"></user-card>
         </block>
+      </template>
+        <template wx:else>
+          <van-empty description="没有找到商户信息，请添加" />
+        </template>
     </view>
     <view class="footer">
     <t-fab icon="add" bind:click="onCreateUser" theme="success" aria-label="增加"></t-fab>

@@ -1,11 +1,15 @@
 <view class="page">
     <van-nav-bar title="设备管理" left-arrow class="custom-navbar" bind:click-left="onClickLeft" />
     <view class="content">
-        <view class="box-list">
+        <view class="box-list" wx:if="{{boxList.length > 0}}">
             <block wx:for="{{boxList}}" wx:key="index">
             <box-card boxInfo="{{item}}" userList="{{userList}}"></box-card>
             </block>
         </view>
+        <view wx:else class="no-box">
+            <van-empty description="没有找到设备信息，请添加设备" />
+        </view>
+          
         <view class="footer">
         <t-fab icon="add" bind:click="onCreateBox" theme="success" aria-label="增加"></t-fab>
         </view>

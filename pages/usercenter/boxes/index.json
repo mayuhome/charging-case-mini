@@ -3,6 +3,7 @@
   "usingComponents": {
     "t-fab": "tdesign-miniprogram/fab/fab",
     "box-card":"../components/box-card/box-card",
-    "van-nav-bar": "@vant/weapp/nav-bar/index"
+    "van-nav-bar": "@vant/weapp/nav-bar/index",
+    "van-empty": "@vant/weapp/empty/index"
   }
 }

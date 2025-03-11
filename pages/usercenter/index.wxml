@@ -35,6 +35,12 @@
         </t-cell>
       </t-cell-group>
     </view>
+        <view class="cell-box">
+      <t-cell-group>
+        <!-- <t-cell title="退出登录" bind:click="helpCenter" bordered="{{false}}" arrow /> -->
+        <t-button size="small" variant="outline" block bind:tap="goLogin">退出登录</t-button>
+      </t-cell-group>
+    </view>
     <!-- </view> -->
     <view class="footer__version" wx:if="{{versionNo !== ''}}">当前版本 {{versionNo}}</view>
     <t-popup visible="{{showMakePhone}}" placement="bottom" bind:visible-change="closeMakePhone" data-index="2">
