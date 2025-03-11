@@ -1,7 +1,7 @@
 // utils/request.js
 
-// const baseURL = 'http://166.108.193.190:3002'; // 后端接口基础 URL
-const baseURL = 'http://127.0.0.1:3002'; // 后端接口基础 URL
+const baseURL = 'https://www.chargingcase.cloud/api'; // 后端接口基础 URL
+// const baseURL = 'http://127.0.0.1:3002'; // 后端接口基础 URL
 
 const request = (url, method = 'GET', data = {}, options = {}) => {
   const token = wx.getStorageSync('token'); // 从缓存中获取 token
