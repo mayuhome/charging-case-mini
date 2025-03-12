@@ -3,11 +3,10 @@
   "navigationStyle": "custom",
   "component": true,
   "usingComponents": {
-    "t-icon": "tdesign-miniprogram/icon/icon",
     "t-tab-bar": "tdesign-miniprogram/tab-bar/tab-bar",
     "t-tab-bar-item": "tdesign-miniprogram/tab-bar-item/tab-bar-item",
-    "van-nav-bar": "@vant/weapp/nav-bar/index",
-    "custom-tabbar": "../../components/custom-tab-bar/index",
-    "custom-navbar": "../../components/custom-nav/custom-nav"
+    "t-icon": "tdesign-miniprogram/icon/icon",
+    "van-tabbar": "@vant/weapp/tabbar/index",
+    "van-tabbar-item": "@vant/weapp/tabbar-item/index"
   }
 }

@@ -25,6 +25,9 @@
     "navigationBarTextStyle": "black",
     "navigationStyle": "custom"
   },
+  "tabbar":{
+    "custom": true
+  },
   "sitemapLocation": "sitemap.json",
   "permission": {
     "scope.userLocation": {

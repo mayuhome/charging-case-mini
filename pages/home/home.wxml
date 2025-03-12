@@ -1,7 +1,15 @@
-<view class="page">
+<view class="container">
   <!-- 自定义导航栏 -->
-  <van-nav-bar title="首页" class="custom-navbar"/>
-  <view class="content">
+  <!-- <van-nav-bar title="首页" class="custom-navbar"/> -->
+<custom-navbar
+  title="首页"
+  back-visible="{{false}}"
+  background-color="#fff"
+  color="#333333"
+  bind:back="handleBack"
+  class="customs-navbar"
+></custom-navbar>
+  <scroll-view scroll-y class="content" style="height: {{contentHeight}}px">
     <view class="header">
       <text class="title">欢迎使用共享充电宝</text>
       <text class="subtitle">随时随地，为您的设备充电</text>
@@ -45,10 +53,17 @@
         </view>
       </view>
     </view>
-  </view>
-  <t-tab-bar class="t-tab-bar" t-class="t-tab-bar" value="{{tabName}}" bindchange="onChange" theme="tag" split="{{false}}">
+  </scroll-view>
+  <!-- <view class="custom-tabbar" style="padding-bottom: {{safeAreaBottom}}px">
+      <t-tab-bar class="t-tab-bar" t-class="t-tab-bar" value="{{tabName}}" bindchange="onChange" theme="tag" split="{{false}}">
     <t-tab-bar-item wx:for="{{tabList}}" wx:key="value" value="{{item.value}}" icon="{{item.icon}}">
       {{item.label}}
     </t-tab-bar-item>
   </t-tab-bar>
+  </view> -->
+    <!-- 自定义 TabBar -->
+        <custom-tabbar class="tabbar" active="{{0}}"></custom-tabbar>
+
+       
+
 </view>

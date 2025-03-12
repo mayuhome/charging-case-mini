@@ -1,0 +1,24 @@
+<!-- components/custom-navbar/index.wxml -->
+<view 
+  class="custom-navbar" 
+  style="height: {{navBarHeight}}px; padding-top: {{statusBarHeight}}px; background: {{backgroundColor}};"
+>
+  <!-- 左侧区域 -->
+  <view class="nav-left">
+    <block wx:if="{{backVisible}}">
+      <view class="back-btn" bindtap="handleBack">
+        <image src="{{backIconPath}}" class="back-icon" wx:if="{{backIconPath}}"/>
+        <text wx:else>‹</text>
+      </view>
+    </block>
+    <slot name="left"></slot>
+  </view>
+
+  <!-- 标题区域 -->
+  <view class="nav-title" style="color: {{color}}">{{title}}</view>
+
+  <!-- 右侧区域 -->
+  <view class="nav-right">
+    <slot name="right"></slot>
+  </view>
+</view>

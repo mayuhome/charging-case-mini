@@ -1,0 +1,47 @@
+/* components/custom-navbar/index.wxss */
+.custom-navbar {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    box-sizing: content-box !important;
+  }
+  
+  .nav-left,
+  .nav-right {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    min-width: 88rpx;
+    padding: 0 20rpx;
+  }
+  
+  .nav-left {
+    margin-left: 10rpx;
+  }
+  
+  .nav-title {
+    flex: 1;
+    text-align: center;
+    font-size: 34rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding: 0 40rpx;
+  }
+  
+  .back-btn {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    font-size: 46rpx;
+    padding-right: 30rpx;
+  }
+  
+  .back-icon {
+    width: 48rpx;
+    height: 48rpx;
+  }
