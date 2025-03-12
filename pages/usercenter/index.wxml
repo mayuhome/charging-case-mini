@@ -1,7 +1,7 @@
 <view class="container">
   <!-- 自定义导航栏 -->
   <!-- <van-nav-bar title="个人中心" class="custom-navbar" bind:click-left="onClickLeft" /> -->
-  <custom-navbar class="custom-navbar">xxx</custom-navbar>
+  <custom-nav-bar class="custom-navbar">xxx</custom-nav-bar>
   <view class="content">
     <view class="scroll-view" wx:if="{{userInfo}}">
       <view class="cell-box">
@@ -84,5 +84,5 @@
       {{item.label}}
     </t-tab-bar-item>
   </t-tab-bar> -->
-  <custom-tabbar active="{{2}}"></custom-tabbar>
+  <custom-tab-bar active="{{2}}"></custom-tab-bar>
 </view>

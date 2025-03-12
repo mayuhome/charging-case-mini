@@ -26,7 +26,7 @@ Component({
       // this.setData({
       //   active: e.detail
       // })
-      wx.redirectTo({
+      wx.switchTab({
         url: this.data.tabList[e.detail].value,
       })
     },

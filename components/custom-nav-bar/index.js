@@ -31,7 +31,7 @@ Component({
   methods: {
     calculateHeight() {
       try {
-        const systemInfo = wx.getSystemInfoSync()
+        const systemInfo = wx.getWindowInfo()
         const menuButtonInfo = wx.getMenuButtonBoundingClientRect()
         
         // 计算导航栏高度

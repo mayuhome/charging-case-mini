@@ -13,8 +13,8 @@
     "t-tab-bar-item": "tdesign-miniprogram/tab-bar-item/tab-bar-item",
     "van-nav-bar": "@vant/weapp/nav-bar/index",
     "van-button": "@vant/weapp/button/index",
-    "custom-tabbar": "../../components/custom-tab-bar/index",
-    "custom-navbar": "../../components/custom-nav/custom-nav"
+    "custom-tab-bar": "../../components/custom-tab-bar/index",
+    "custom-nav-bar": "/components/custom-nav-bar/index"
   },
   "enablePullDownRefresh": true
 }

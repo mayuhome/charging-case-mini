@@ -25,7 +25,7 @@
       </view>
     </view>
   </view>
-  <custom-tabbar active="{{1}}"></custom-tabbar>
+  <custom-tab-bar active="{{1}}"></custom-tab-bar>
   <!-- <t-tab-bar t-class="t-tab-bar" value="{{tabName}}" bindchange="onChange" theme="tag" split="{{false}}">
     <t-tab-bar-item wx:for="{{tabList}}" wx:key="value" value="{{item.value}}" icon="{{item.icon}}">
       {{item.label}}

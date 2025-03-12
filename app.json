@@ -25,8 +25,22 @@
     "navigationBarTextStyle": "black",
     "navigationStyle": "custom"
   },
-  "tabbar":{
-    "custom": true
+  "tabBar":{
+    "custom": true,
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/report/report",
+        "text": "报表"
+      },
+      {
+        "pagePath": "pages/usercenter/index",
+        "text": "我的"
+      }
+    ]
   },
   "sitemapLocation": "sitemap.json",
   "permission": {

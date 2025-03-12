@@ -1,40 +1,9 @@
-<!-- <t-tab-bar
- value="{{active}}"
- bindchange="onChange"
- split="{{false}}"
->
-	<t-tab-bar-item
-	 wx:for="{{list}}"
-	 wx:for-item="item"
-	 wx:for-index="index"
-	 wx:key="index"
-	>
-		<view class="custom-tab-bar-wrapper">
-			<t-icon prefix="wr" name="{{item.icon}}" size="48rpx" />
-			<view class="text">{{ item.text }}</view>
-		</view>
-	</t-tab-bar-item>
-</t-tab-bar> -->
-<!-- <t-tab-bar
- t-class="t-tab-bar" 
- value="{{tabName}}" 
- bindchange="onChange" 
- theme="tag" 
- split="{{false}}">
-	<t-tab-bar-item 
-	wx:for="{{tabList}}" 
-	wx:key="value" 
-	value="{{item.value}}" 
-	icon="{{item.icon}}">
-		{{item.label}}
-	</t-tab-bar-item>
-</t-tab-bar> -->
-
-<van-tabbar active="{{ active }}" bind:change="onChange">
-  <van-tabbar-item	
-  wx:for="{{tabList}}" 
-	wx:key="value" 
-	value="{{item.value}}" 
-	icon="{{item.icon}}">
-		{{item.label}}</van-tabbar-item>
+<van-tabbar 
+	active="{{ active }}"
+	custom-class="custom-tabbar"
+	safe-area-inset-bottom="{{ true }}"
+	 bind:change="onChange">
+				<van-tabbar-item wx:for="{{tabList}}" wx:key="value" value="{{item.value}}" icon="{{item.icon}}">
+								{{item.label}}
+				</van-tabbar-item>
 </van-tabbar>

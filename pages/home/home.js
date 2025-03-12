@@ -1,45 +1,15 @@
+const NAVBAR_HEIGHT = 44 // 导航栏内容区域高度（不包括状态栏）
+const TABBAR_HEIGHT = 50 // 与自定义 TabBar 组件高度一致
 Page({
   data: {
-    statusBarHeight: 20, // 状态栏高度（默认值）
-    navBarHeight: 60,    // 导航栏总高度（默认值）
-    safeAreaBottom: 0,   // 底部安全区域高度
-    contentHeight: 0,     // 内容区域高度
-    tabName: '/pages/home/home',
-    tabList: [
-      { value: '/pages/home/home', label: '首页', icon: 'home' },
-      { value: '/pages/report/report', label: '数据', icon: 'app' },
-      { value: '/pages/usercenter/index', label: '我的', icon: 'user' },
-    ],
-
+    activeTab: 0,
+    contentHeight: 0,
+    tabbarHeight: 50, // 与 CSS 中高度一致（单位：px）
+    tabbarSafeHeight: 0
   },
 
   onLoad() {
-    // 获取系统信息
-    const systemInfo = wx.getWindowInfo();
-    const menuButtonInfo = wx.getMenuButtonBoundingClientRect();
-
-    // 计算导航栏高度（状态栏高度 + 胶囊按钮高度 + 间距）
-    const statusBarHeight = systemInfo.statusBarHeight;
-    const navBarHeight = (menuButtonInfo.top - statusBarHeight) * 2 + menuButtonInfo.height;
-
-    // 计算安全区域
-    const safeAreaBottom = systemInfo.screenHeight - systemInfo.safeArea.bottom;
-
-    // 计算内容区域高度
-    const contentHeight = systemInfo.windowHeight - navBarHeight - 100; // 100是底部TabBar高度
-
-    console.log(      statusBarHeight,
-      navBarHeight,
-      safeAreaBottom,
-      contentHeight);
-    
-
-    this.setData({
-      statusBarHeight,
-      navBarHeight,
-      safeAreaBottom,
-      contentHeight
-    });
+    this.calculateLayout();
   },
 
   onChange(e) {
@@ -58,4 +28,30 @@ Page({
       theme,
     });
   },
+
+  calculateLayout() {
+    try {
+      const systemInfo = wx.getWindowInfo();
+    
+      // 计算内容区域高度
+      const contentHeight = systemInfo.windowHeight - this.data.tabbarHeight
+      
+      // 计算安全区域高度（全面屏设备）
+      const safeAreaBottom = systemInfo.screenHeight - systemInfo.safeArea.bottom
+      const tabbarSafeHeight = this.data.tabbarHeight + safeAreaBottom
+  
+      this.setData({
+        contentHeight,
+        tabbarSafeHeight: Math.ceil(tabbarSafeHeight)
+      })
+
+    } catch (err) {
+      console.error('布局计算失败:', err)
+      // 设置默认值防止页面空白
+      this.setData({
+        contentHeight: 500,
+        contentPadding: '0 0 34px 0'
+      })
+    }
+  }
 });

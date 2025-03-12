@@ -1,15 +1,14 @@
-<view class="container">
+<view class="page-container">
   <!-- 自定义导航栏 -->
   <!-- <van-nav-bar title="首页" class="custom-navbar"/> -->
-<custom-navbar
+<custom-nav-bar
   title="首页"
   back-visible="{{false}}"
   background-color="#fff"
   color="#333333"
   bind:back="handleBack"
-  class="customs-navbar"
-></custom-navbar>
-  <scroll-view scroll-y class="content" style="height: {{contentHeight}}px">
+></custom-nav-bar>
+  <scroll-view scroll-y class="content"  style="height: {{contentHeight}}px; padding-bottom: {{tabbarSafeHeight}}px">
     <view class="header">
       <text class="title">欢迎使用共享充电宝</text>
       <text class="subtitle">随时随地，为您的设备充电</text>
@@ -62,8 +61,5 @@
   </t-tab-bar>
   </view> -->
     <!-- 自定义 TabBar -->
-        <custom-tabbar class="tabbar" active="{{0}}"></custom-tabbar>
-
-       
-
+    <custom-tab-bar class="tabbar" active="{{0}}"></custom-tab-bar>
 </view>

@@ -60,7 +60,7 @@ onUnload(){
         this.updateUserInfo(res.userInfo);        
         setStorage('userInfo', res.userInfo);
         setStorage('token', res.accessToken);
-        wx.redirectTo({
+        wx.switchTab({
           url: '/pages/home/home', // 跳转到首页
         });
       })
