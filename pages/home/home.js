@@ -34,11 +34,12 @@ Page({
       const systemInfo = wx.getWindowInfo();
     
       // 计算内容区域高度
-      const contentHeight = systemInfo.windowHeight - this.data.tabbarHeight
+      const contentHeight = systemInfo.windowHeight - this.data.tabbarHeight - systemInfo.safeArea.top;
       
       // 计算安全区域高度（全面屏设备）
-      const safeAreaBottom = systemInfo.screenHeight - systemInfo.safeArea.bottom
-      const tabbarSafeHeight = this.data.tabbarHeight + safeAreaBottom
+      const safeAreaBottom = systemInfo.screenHeight - systemInfo.safeArea.bottom;
+      // const safeAreaTop = systemInfo.safeArea.top;
+      const tabbarSafeHeight = this.data.tabbarHeight + safeAreaBottom;
   
       this.setData({
         contentHeight,

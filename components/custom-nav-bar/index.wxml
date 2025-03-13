@@ -1,24 +1,12 @@
-<!-- components/custom-navbar/index.wxml -->
-<view 
-  class="custom-navbar" 
-  style="height: {{navBarHeight}}px; padding-top: {{statusBarHeight}}px; background: {{backgroundColor}};"
+<van-nav-bar
+  custom-class="custom-nav-bar"
+  title="{{title}}"
+  left-arrow="{{showBackArrow}}"
+  border="{{false}}"
+  bind:click-left="onBack"
 >
-  <!-- 左侧区域 -->
-  <view class="nav-left">
-    <block wx:if="{{backVisible}}">
-      <view class="back-btn" bindtap="handleBack">
-        <image src="{{backIconPath}}" class="back-icon" wx:if="{{backIconPath}}"/>
-        <text wx:else>‹</text>
-      </view>
-    </block>
-    <slot name="left"></slot>
-  </view>
-
-  <!-- 标题区域 -->
-  <view class="nav-title" style="color: {{color}}">{{title}}</view>
-
-  <!-- 右侧区域 -->
-  <view class="nav-right">
-    <slot name="right"></slot>
-  </view>
-</view>
+  <!-- 自定义左侧插槽 -->
+  <!-- <block slot="left" wx:if="{{!showBackArrow}}">
+    <image src="{{leftIcon}}" class="custom-left-icon" />
+  </block> -->
+</van-nav-bar>

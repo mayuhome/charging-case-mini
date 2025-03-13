@@ -1,53 +1,40 @@
-// components/custom-navbar/index.js
 Component({
   properties: {
     title: String,
-    backVisible: {
+    showBackArrow: {
       type: Boolean,
-      value: false
+      value: true
     },
-    backIconPath: String,
-    backgroundColor: {
-      type: String,
-      value: '#ffffff'
-    },
-    color: {
-      type: String,
-      value: '#000000'
-    }
+    leftIcon: String
   },
 
   data: {
-    statusBarHeight: 20,
-    navBarHeight: 44
+    statusBarHeight: 0,
+    navBarHeight: 44 // 与 CSS 中高度一致
   },
 
   lifetimes: {
     attached() {
-      this.calculateHeight()
+      const systemInfo = wx.getWindowInfo();
+      const deviceInfo = wx.getDeviceInfo();
+      const menuButtonInfo = wx.getMenuButtonBoundingClientRect()
+      
+      // 动态计算状态栏高度
+      const statusBarHeight = systemInfo.statusBarHeight;  
+            
+      // 安卓特殊处理
+      const isAndroid = deviceInfo.system.toLowerCase().includes('android')
+      const androidPadding = isAndroid ? 8 : 0
+
+      this.setData({
+        statusBarHeight: statusBarHeight + androidPadding,
+        navBarHeight: menuButtonInfo.height + (menuButtonInfo.top - statusBarHeight) * 2
+      })
     }
   },
 
   methods: {
-    calculateHeight() {
-      try {
-        const systemInfo = wx.getWindowInfo()
-        const menuButtonInfo = wx.getMenuButtonBoundingClientRect()
-        
-        // 计算导航栏高度
-        const statusBarHeight = systemInfo.statusBarHeight
-        const navBarHeight = (menuButtonInfo.top - statusBarHeight) * 2 + menuButtonInfo.height
-
-        this.setData({
-          statusBarHeight,
-          navBarHeight: Math.ceil(navBarHeight)
-        })
-      } catch (err) {
-        console.error('导航栏高度计算失败', err)
-      }
-    },
-
-    handleBack() {
+    onBack() {
       this.triggerEvent('back')
       wx.navigateBack()
     }
