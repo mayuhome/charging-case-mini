@@ -1,4 +1,4 @@
-.page{
+/* .page{
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -17,21 +17,24 @@
     flex-direction: column;
     justify-content: start;
     overflow: auto;
-    /* margin-top: 80px; */
     margin-bottom: 40px;
-    /* padding: 20rpx 0; */
 }
 .t-tab-bar{
     position: relative;
     bottom: 0;
     width: 100%;
-  }
+  } */
+
+.scroll-view{
+    height: 100%;
+    padding: 0 20rpx;
+    overflow: auto;
+}
 
 .header{
     background-color: #15B8A6;
     border-radius: 12px;
     height: 120px;
-    /* display: block; */
     margin: 32rpx;
     padding: 20px 12px;
     color: #fff;

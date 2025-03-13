@@ -14,7 +14,8 @@
     "van-nav-bar": "@vant/weapp/nav-bar/index",
     "van-button": "@vant/weapp/button/index",
     "custom-tab-bar": "../../components/custom-tab-bar/index",
-    "custom-nav-bar": "/components/custom-nav-bar/index"
+    "custom-nav-bar": "/components/custom-nav-bar/index",
+    "layout": "/components/layout/index"
   },
   "enablePullDownRefresh": true
 }

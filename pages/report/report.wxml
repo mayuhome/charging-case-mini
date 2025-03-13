@@ -1,5 +1,4 @@
-<view class="page">
-  <!-- 自定义导航栏 -->
+<!-- <view class="page">
   <van-nav-bar title="收益明细" class="custom-navbar" />
   <view class="content">
     <view class="header">
@@ -13,9 +12,7 @@
       </view>
     </view>
     <view class="incomes">
-      <!-- <view class="search"> -->
       <van-search value="{{ keyword }}" placeholder="请输入设备编号" bindchange="handleSearch" />
-      <!-- </view> -->
       <view wx:for="{{filterIncomes}}" class="income" wx:key="item">
           <view>
             <view class="date">{{item.yearMonth}}</view>
@@ -26,9 +23,32 @@
     </view>
   </view>
   <custom-tab-bar active="{{1}}"></custom-tab-bar>
-  <!-- <t-tab-bar t-class="t-tab-bar" value="{{tabName}}" bindchange="onChange" theme="tag" split="{{false}}">
-    <t-tab-bar-item wx:for="{{tabList}}" wx:key="value" value="{{item.value}}" icon="{{item.icon}}">
-      {{item.label}}
-    </t-tab-bar-item>
-  </t-tab-bar> -->
-</view>
+</view> -->
+
+
+<layout navbarTitle="收益明细" showBackArrow="{{false}}" active="{{1}}" bindback="handleBack">
+  <view class="scroll-view">
+    <view class="header">
+      <view class="amount-content">
+        <text class="title" space="false" decode="false">待提现</text>
+        <text class="amount">¥ {{currentAmount || 0}}</text>
+      </view>
+      <view class="amount-content">
+        <text class="title" space="false" decode="false">总收入</text>
+        <text class="amount">¥ {{totalAmount || 0}}</text>
+      </view>
+    </view>
+    <view class="incomes">
+      <van-search value="{{ keyword }}" placeholder="请输入设备编号" bindchange="handleSearch" />
+      <view wx:for="{{filterIncomes}}" class="income" wx:key="item">
+          <view>
+            <view class="date">{{item.yearMonth}}</view>
+            <view class="code">设备编号：{{item.code}}</view>
+          </view>
+          <view class="amount">¥ {{item.amount}}</view>
+      </view>
+    </view>
+  </view>
+    
+  
+</layout>
