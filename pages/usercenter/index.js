@@ -75,12 +75,10 @@ const getDefaultData = () => ({
   currAuthStep: 1,
   showKefu: true,
   versionNo: '0.1.0',
-  tabName: '/pages/usercenter/index',
-  tabList: [
-    { value: '/pages/home/home', label: '首页', icon: 'home' },
-    { value: '/pages/report/report', label: '数据', icon: 'app' },
-    { value: '/pages/usercenter/index', label: '我的', icon: 'user' },
-  ],
+  activeTab: 0,
+  contentHeight: 0,
+  tabbarHeight: 50, // 与 CSS 中高度一致（单位：px）
+  tabbarSafeHeight: 0
 });
 
 Page({
@@ -92,6 +90,7 @@ Page({
   
 
   onLoad() {
+    this.calculateLayout();
     this.getVersionInfo();
     this.storeBindings = createStoreBindings(this, {
       store: userStore,
@@ -281,5 +280,32 @@ Page({
     wx.navigateTo({
       url: '/pages/login/login'
     });
+  },
+
+  calculateLayout() {
+    try {
+      const systemInfo = wx.getWindowInfo();
+    
+      // 计算内容区域高度
+      const contentHeight = systemInfo.windowHeight - this.data.tabbarHeight - systemInfo.safeArea.top;
+      
+      // 计算安全区域高度（全面屏设备）
+      const safeAreaBottom = systemInfo.screenHeight - systemInfo.safeArea.bottom;
+      // const safeAreaTop = systemInfo.safeArea.top;
+      const tabbarSafeHeight = this.data.tabbarHeight + safeAreaBottom;
+  
+      this.setData({
+        contentHeight,
+        tabbarSafeHeight: Math.ceil(tabbarSafeHeight)
+      })
+
+    } catch (err) {
+      console.error('布局计算失败:', err)
+      // 设置默认值防止页面空白
+      this.setData({
+        contentHeight: 500,
+        contentPadding: '0 0 34px 0'
+      })
+    }
   }
 });

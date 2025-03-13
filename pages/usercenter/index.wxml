@@ -1,8 +1,12 @@
-<view class="container">
+<view class="page-container">
   <!-- 自定义导航栏 -->
   <!-- <van-nav-bar title="个人中心" class="custom-navbar" bind:click-left="onClickLeft" /> -->
-  <custom-nav-bar class="custom-navbar">xxx</custom-nav-bar>
-  <view class="content">
+<custom-nav-bar
+  title="个人中心"
+  show-back-arrow="{{false}}"
+  bind:back="handleBack"
+/>
+  <scroll-view scroll-y class="content"  style="height: {{contentHeight}}px; padding-bottom: {{tabbarSafeHeight}}px">
     <view class="scroll-view" wx:if="{{userInfo}}">
       <view class="cell-box">
         <t-cell-group>
@@ -78,7 +82,7 @@
         重新登录
       </van-button>
     </view>
-  </view>
+  </scroll-view>
   <!-- <t-tab-bar t-class="t-tab-bar" value="{{tabName}}" bindchange="onChange" theme="tag" split="{{false}}">
     <t-tab-bar-item wx:for="{{tabList}}" wx:key="value" value="{{item.value}}" icon="{{item.icon}}">
       {{item.label}}

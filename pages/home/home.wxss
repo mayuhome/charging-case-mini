@@ -7,7 +7,6 @@
   position: relative;
   background: #f5f5f5;
   gap: 10px;
-
 }
 
 /* 核心容器 */

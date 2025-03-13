@@ -7,6 +7,7 @@
     "t-tab-bar": "tdesign-miniprogram/tab-bar/tab-bar",
     "t-tab-bar-item": "tdesign-miniprogram/tab-bar-item/tab-bar-item",
     "custom-tab-bar": "/components/custom-tab-bar/index",
-    "custom-nav-bar": "/components/custom-nav-bar/index"
+    "custom-nav-bar": "/components/custom-nav-bar/index",
+    "layout": "/components/layout/index"
   }
 }
