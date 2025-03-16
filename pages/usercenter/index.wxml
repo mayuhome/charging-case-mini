@@ -1,88 +1,3 @@
-<!-- <view class="page-container">
-<custom-nav-bar
-  title="个人中心"
-  show-back-arrow="{{false}}"
-  bind:back="handleBack"
-/>
-  <scroll-view scroll-y class="content"  style="height: {{contentHeight}}px; padding-bottom: {{tabbarSafeHeight}}px">
-    <view class="scroll-view" wx:if="{{userInfo}}">
-      <view class="cell-box">
-        <t-cell-group>
-          <t-cell title="账号" bordered="{{false}}" note="{{userInfo.phone}}" />
-          <t-cell title="姓名" bordered="{{false}}" note="{{userInfo.name}}" />
-          <t-cell title="角色" bordered="{{false}}" size="small" note="{{userInfo.role == 'admin'?'管理员':'普通商户'}}" />
-        </t-cell-group>
-      </view>
-            <view class="cell-box">
-        <t-cell-group>
-          <t-cell title="账号" bordered="{{false}}" note="{{userInfo.phone}}" />
-          <t-cell title="姓名" bordered="{{false}}" note="{{userInfo.name}}" />
-          <t-cell title="角色" bordered="{{false}}" size="small" note="{{userInfo.role == 'admin'?'管理员':'普通商户'}}" />
-        </t-cell-group>
-      </view>
-            <view class="cell-box">
-        <t-cell-group>
-          <t-cell title="账号" bordered="{{false}}" note="{{userInfo.phone}}" />
-          <t-cell title="姓名" bordered="{{false}}" note="{{userInfo.name}}" />
-          <t-cell title="角色" bordered="{{false}}" size="small" note="{{userInfo.role == 'admin'?'管理员':'普通商户'}}" />
-        </t-cell-group>
-      </view>
-      <view class="cell-box">
-        <t-cell-group wx:if="{{userInfo.role==='admin'}}">
-          <t-cell title="我的设备" bordered="{{false}}" bind:click="jumpToBoxes" arrow />
-          <t-cell title="我的商户" bordered="{{false}}" bind:click="jumpToUsers" arrow />
-        </t-cell-group>
-      </view>
-      <view class="cell-box">
-        <t-cell-group wx:if="{{userInfo.role==='admin'}}">
-          <t-cell title="数据维护" bordered="{{false}}" bind:click="jumpToMaintain" arrow />
-        </t-cell-group>
-      </view>
-      <view class="cell-box">
-        <t-cell-group>
-          <t-cell title="设备编号" bordered="{{false}}" note="{{userInfo.code || '暂无设备'}}" />
-          <t-cell title="店铺名称" bordered="{{false}}" note="{{userInfo.address || '待填写'}}" />
-          <t-cell title="分成比例" bordered="{{false}}" note="1/3/5/10" />
-        </t-cell-group>
-      </view>
-      <view class="cell-box">
-        <t-cell-group>
-          <t-cell title="帮助中心" bind:click="helpCenter" bordered="{{false}}" arrow />
-          <t-cell title="客服热线" bind:click="openMakePhone" bordered="{{false}}">
-            <t-icon name="service" size="48rpx" slot="note" />
-          </t-cell>
-        </t-cell-group>
-      </view>
-      <view class="cell-box">
-        <t-cell-group>
-          <t-button size="small" variant="outline" block bind:tap="goLogin">退出登录</t-button>
-        </t-cell-group>
-      </view>
-      <view class="footer__version" wx:if="{{versionNo !== ''}}">当前版本 {{versionNo}}</view>
-      <t-popup visible="{{showMakePhone}}" placement="bottom" bind:visible-change="closeMakePhone" data-index="2">
-        <view class="popup-content">
-          <view class="popup-title border-bottom-1px" wx:if="{{customerServiceInfo.serviceTimeDuration}}">
-            服务时间: {{customerServiceInfo.serviceTimeDuration}}
-          </view>
-          <view class="popup-phone {{showKefu ? 'border-bottom-1px' : ''}}" bind:tap="call">
-            电话客服
-          </view>
-          <view class="popup-close" bind:tap="closeMakePhone">取消</view>
-        </view>
-      </t-popup>
-      <t-toast id="t-toast" />
-    </view>
-    <view wx:else class="no-user">
-      <view selectable="false" space="false" decode="false">没有找到用户信息，请重新登录</view>
-      <van-button class="re-login" plain hairline type="info" block bind:click="goLogin">
-        重新登录
-      </van-button>
-    </view>
-  </scroll-view>
-  <custom-tab-bar active="{{2}}"></custom-tab-bar>
-</view> -->
-
-
 <layout navbarTitle="个人中心" showBackArrow="{{false}}" active="{{2}}" bindback="handleBack">
     <view class="scroll-view" wx:if="{{userInfo}}">
 
@@ -93,23 +8,22 @@
           <t-cell title="角色" bordered="{{false}}" size="small" note="{{userInfo.role == 'admin'?'管理员':'普通商户'}}" />
         </t-cell-group>
       </view>
-
-      <view class="cell-box">
-        <t-cell-group wx:if="{{userInfo.role==='admin'}}">
+      <view class="cell-box" wx:if="{{userInfo.role==='admin'}}">
+        <t-cell-group>
           <t-cell title="我的设备" bordered="{{false}}" bind:click="jumpToBoxes" arrow />
           <t-cell title="我的商户" bordered="{{false}}" bind:click="jumpToUsers" arrow />
         </t-cell-group>
       </view>
-      <view class="cell-box">
-        <t-cell-group wx:if="{{userInfo.role==='admin'}}">
+      <view class="cell-box" wx:if="{{userInfo.role==='admin'}}">
+        <t-cell-group >
           <t-cell title="数据维护" bordered="{{false}}" bind:click="jumpToMaintain" arrow />
         </t-cell-group>
       </view>
       <view class="cell-box">
         <t-cell-group>
-          <t-cell title="设备编号" bordered="{{false}}" note="{{userInfo.code || '暂无设备'}}" />
-          <t-cell title="店铺名称" bordered="{{false}}" note="{{userInfo.address || '待填写'}}" />
-          <t-cell title="分成比例" bordered="{{false}}" note="1/3/5/10" />
+          <t-cell title="设备编号" bordered="{{false}}" note="{{userInfo.boxes[0].code || '暂无设备'}}" />
+          <t-cell title="店铺名称" bordered="{{false}}" note="{{userInfo.boxes[0].address || '待填写'}}" />
+          <t-cell title="分成比例" bordered="{{false}}" note="{{userInfo.boxes[0].profitShare || '1/3'}}" />
         </t-cell-group>
       </view>
       <view class="cell-box">

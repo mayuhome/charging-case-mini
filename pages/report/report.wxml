@@ -1,31 +1,3 @@
-<!-- <view class="page">
-  <van-nav-bar title="收益明细" class="custom-navbar" />
-  <view class="content">
-    <view class="header">
-      <view class="amount-content">
-        <text class="title" space="false" decode="false">待提现</text>
-        <text class="amount">¥ {{currentAmount || 0}}</text>
-      </view>
-      <view class="amount-content">
-        <text class="title" space="false" decode="false">总收入</text>
-        <text class="amount">¥ {{totalAmount || 0}}</text>
-      </view>
-    </view>
-    <view class="incomes">
-      <van-search value="{{ keyword }}" placeholder="请输入设备编号" bindchange="handleSearch" />
-      <view wx:for="{{filterIncomes}}" class="income" wx:key="item">
-          <view>
-            <view class="date">{{item.yearMonth}}</view>
-            <view class="code">设备编号：{{item.code}}</view>
-          </view>
-          <view class="amount">¥ {{item.amount}}</view>
-      </view>
-    </view>
-  </view>
-  <custom-tab-bar active="{{1}}"></custom-tab-bar>
-</view> -->
-
-
 <layout navbarTitle="收益明细" showBackArrow="{{false}}" active="{{1}}" bindback="handleBack">
   <view class="scroll-view">
     <view class="header">

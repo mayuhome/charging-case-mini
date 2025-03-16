@@ -14,7 +14,8 @@ Page({
     ],
   },
 
-  onLoad() {
+  onShow() {
+    console.log('show');
     IncomeAPI.getIncomeList().then(res => {
       const totalAmount = res.map(m => m.amount).reduce((total, item) => parseFloat(item) + parseFloat(total), 0);
       // const currentAmount = res.map(m => m.currentAmount).reduce((total, item) => parseFloat(item) + parseFloat(total), 0);      
