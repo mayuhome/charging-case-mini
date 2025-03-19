@@ -27,8 +27,11 @@
 
 .scroll-view{
     height: 100%;
+    display: block;
     padding: 0 20rpx;
     overflow: auto;
+    background-color: #fff;
+    margin: 0 16rpx;
 }
 
 .header{
@@ -42,6 +45,7 @@
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
+    
 }
 
 .header .amount-content {

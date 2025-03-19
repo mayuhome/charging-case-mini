@@ -1,42 +1,24 @@
-.page-container {
-  width: 100vw;
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  overflow: hidden;
-  position: relative;
-  background: #f5f5f5;
-  gap: 10px;
-}
+
 
 /* 核心容器 */
-.custom-nav-bar {
+/* .custom-nav-bar {
   height: calc(44px + env(safe-area-inset-top)) !important;
   padding-top: env(safe-area-inset-top) !important;
   padding-top: constant(safe-area-inset-top) !important;
   background: #ffffff !important;
   box-shadow: 0 2px 12px rgba(0,0,0,0.05);
-}
+} */
 
 /* 状态栏高度适配 */
-.van-nav-bar__content {
+/* .van-nav-bar__content {
   height: 44px !important;
   line-height: 44px !important;
-}
+} */
 .content{
   width: 100%;
   box-sizing: border-box;
   flex: 1;
   -webkit-overflow-scrolling: touch;
-}
-.tabbar{
-  /* position: fixed !important;
-  bottom: 0;
-  left: 0; */
-  /* z-index: 9999;
-  width: 100%;
-  height: 50px; */
-
 }
 
 .header {

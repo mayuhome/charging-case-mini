@@ -1,3 +1,14 @@
+.page-container {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  background: #f5f5f5;
+  gap: 10px;
+}
+
 /* 导航栏（固定定位） */
 .navbar {
     position: fixed;
@@ -14,14 +25,6 @@
   
   /* 标签栏（固定定位） */
   .tabbar {
-    /* position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background: #f5f5f5;
-    display: flex;
-    align-items: center;
-    border-top: 1rpx solid #ddd; */
     height: 50px !important;
     box-sizing: content-box !important;
   /* 适配 iOS 安全区域 */
